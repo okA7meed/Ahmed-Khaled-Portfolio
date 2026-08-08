@@ -5,7 +5,7 @@ export const profile = {
   major: "Computer Science",
   location: "Shorouk City, Cairo — Egypt",
   languages: ["Arabic", "English"],
-  email: "Ahmed7727087@gmail.com",
+  email: "Ahmed.khaaledh@gmail.com",
   phone: "01206411015",
   whatsapp: "01206411015",
   github: { handle: "okA7meed", url: "https://github.com/okA7meed" },
