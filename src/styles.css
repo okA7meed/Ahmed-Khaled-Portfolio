@@ -1,0 +1,406 @@
+@import "tailwindcss" source(none);
+@source "../src";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+/*
+ * Design system — "terminal luxe": near-black canvas, acid-lime signal color,
+ * grotesk display type + mono technical labels.
+ */
+
+@theme inline {
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --radius-2xl: calc(var(--radius) + 8px);
+  --radius-3xl: calc(var(--radius) + 12px);
+
+  --font-display: "Syne", "Space Grotesk", ui-sans-serif, system-ui, sans-serif;
+  --font-sans: "Space Grotesk", ui-sans-serif, system-ui, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, monospace;
+
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-surface: var(--surface);
+  --color-surface-2: var(--surface-2);
+  --color-lime: var(--lime);
+  --color-lime-dim: var(--lime-dim);
+  --color-hairline: var(--hairline);
+}
+
+:root {
+  --radius: var(--radius-base, 0.25rem);
+
+  /* Theme colors are injected by the ThemeProvider.
+     These fallbacks keep the site usable before hydration. */
+  --background: #0e0e0e;
+  --foreground: #f5f5f0;
+  --surface: #171717;
+  --surface-2: #222222;
+  --hairline: #333333;
+  --lime: #b9ff39;
+  --lime-dim: #b9ff39;
+
+  --card: var(--surface);
+  --card-foreground: var(--foreground);
+  --popover: var(--surface);
+  --popover-foreground: var(--foreground);
+  --primary: var(--lime);
+  --primary-foreground: #0e1410;
+  --secondary: var(--surface-2);
+  --secondary-foreground: var(--foreground);
+  --muted: var(--surface-2);
+  --muted-foreground: #b8b8b8;
+  --accent: var(--surface-2);
+  --accent-foreground: var(--foreground);
+  --destructive: #ff5d5d;
+  --destructive-foreground: #ffffff;
+  --border: var(--hairline);
+  --input: var(--hairline);
+  --ring: var(--lime);
+
+  /* Layout tokens */
+  --container-max: 1240px;
+
+  /* Navbar tokens */
+  --nav-background: rgba(15, 15, 15, 0.82);
+  --nav-border: rgba(255, 255, 255, 0.08);
+  --nav-toggle-border: rgba(255, 255, 255, 0.1);
+  --nav-hamburger-bg: rgba(255, 255, 255, 0.03);
+  --nav-hamburger-border: rgba(255, 255, 255, 0.1);
+  --nav-text: rgba(255, 255, 255, 0.72);
+  --nav-text-hover: #ffffff;
+  --nav-icon: rgba(255, 255, 255, 0.7);
+  --shadow-nav: 0 8px 20px rgba(0, 0, 0, 0.22);
+  --shadow-strong: rgba(0, 0, 0, 0.35);
+  --shadow-color: rgba(0, 0, 0, 0.22);
+  --dropdown-background: rgba(18, 18, 18, 0.85);
+  --mobile-hover: rgba(255, 255, 255, 0.04);
+  --logo-const: #b9ff39;
+  --logo-name: #ffffff;
+}
+
+/* Smooth color transition when switching themes */
+html,
+html *,
+html *::before,
+html *::after {
+  transition:
+    background-color 300ms ease,
+    border-color 300ms ease,
+    color 300ms ease,
+    fill 300ms ease,
+    stroke 300ms ease,
+    box-shadow 300ms ease;
+}
+
+/* Light theme overrides (applied by ThemeProvider on <html>) */
+html[data-theme="light"] {
+  color-scheme: light;
+}
+
+html[data-theme="dark"] {
+  color-scheme: dark;
+}
+
+@layer base {
+  * {
+    border-color: var(--color-border);
+  }
+
+  html {
+    scroll-padding-top: 120px;
+  }
+
+  :focus-visible {
+    outline: 2px solid var(--lime);
+    outline-offset: 2px;
+  }
+
+  body {
+    background-color: var(--color-background);
+    color: var(--color-foreground);
+    font-family: var(--font-sans);
+    -webkit-font-smoothing: antialiased;
+    overflow-x: hidden;
+  }
+
+  ::selection {
+    background: var(--lime);
+    color: oklch(0.16 0.02 126);
+  }
+
+  ::-webkit-scrollbar {
+    width: 8px;
+  }
+  ::-webkit-scrollbar-track {
+    background: var(--background);
+  }
+  ::-webkit-scrollbar-thumb {
+    background: var(--surface-2);
+    border-radius: 99px;
+  }
+}
+
+/* ---------- utilities ---------- */
+
+@utility label-mono {
+  font-family: var(--font-mono);
+  font-size: 0.6875rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--muted-foreground);
+}
+
+@utility display-xl {
+  font-family: var(--font-display);
+  font-weight: 800;
+  letter-spacing: -0.035em;
+  line-height: 0.88;
+  text-transform: uppercase;
+}
+
+@utility glass {
+  background: color-mix(in oklab, var(--surface) 60%, transparent);
+  backdrop-filter: blur(14px) saturate(140%);
+  border: 1px solid color-mix(in oklab, var(--hairline) 80%, transparent);
+}
+
+@utility nav-pill {
+  position: relative;
+  border-radius: 9999px;
+  padding: 0 19px;
+  background: var(--nav-background);
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+  border: 1px solid var(--nav-border);
+  box-shadow: var(--shadow-nav);
+  transition:
+    background-color 0.4s ease,
+    border-color 0.4s ease,
+    box-shadow 0.4s ease;
+}
+
+@utility nav-pill-scrolled {
+  background: color-mix(in oklab, var(--nav-background) 100%, var(--background) 5%);
+  box-shadow: 0 10px 26px var(--shadow-strong);
+}
+
+@utility nav-dropdown {
+  background: var(--dropdown-background);
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+  border: 1px solid var(--nav-border);
+  box-shadow: 0 12px 35px var(--shadow-strong);
+}
+
+@utility nav-mobile-link {
+  transition: background-color 0.3s ease;
+  &:hover {
+    background-color: var(--mobile-hover);
+  }
+}
+
+@utility card-surface {
+  background: linear-gradient(
+    160deg,
+    color-mix(in oklab, var(--surface) 96%, var(--lime) 4%),
+    var(--surface) 45%
+  );
+  border: 1px solid var(--hairline);
+  border-radius: var(--radius-xl);
+}
+
+@utility lime-glow {
+  box-shadow:
+    0 0 0 1px color-mix(in oklab, var(--lime) 30%, transparent),
+    0 0 40px -10px color-mix(in oklab, var(--lime) 55%, transparent);
+}
+
+@utility grid-lines {
+  background-image:
+    linear-gradient(
+      to right,
+      color-mix(in oklab, var(--hairline) 40%, transparent) 1px,
+      transparent 1px
+    ),
+    linear-gradient(
+      to bottom,
+      color-mix(in oklab, var(--hairline) 40%, transparent) 1px,
+      transparent 1px
+    );
+  background-size: 64px 64px;
+}
+
+@utility noise {
+  &::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    opacity: 0.035;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3'/%3E%3C/filter%3E%3Crect width='120' height='120' filter='url(%23n)'/%3E%3C/svg%3E");
+  }
+}
+
+@utility marquee-track {
+  animation: marquee 32s linear infinite;
+  animation-duration: var(--marquee-duration, 32s);
+}
+
+@keyframes marquee {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+/* ---------- marquee premium edge fade ---------- */
+
+/*
+ * Premium edge fade for infinite marquees.
+ * Uses a CSS mask (mask-image) so only *visibility* fades — the certificates'
+ * position, size and scroll animation are untouched. The center stays fully
+ * visible while the edges softly dissolve into the container.
+ *
+ * The fade width is driven by --marquee-fade (default 96px) and scales up on
+ * wider screens. Rounded corners are preserved because the mask is applied to
+ * the container (which keeps its own overflow/border radius).
+ *
+ * Fallback: for browsers without mask-image support, absolutely positioned
+ * gradient overlays (matching the page background) are used instead. They are
+ * pointer-events:none and absolutely positioned, so they never shift layout
+ * or block card interaction.
+ */
+:root {
+  --marquee-fade: 96px;
+}
+
+@utility marquee-edge-fade {
+  -webkit-mask-image: linear-gradient(
+    to right,
+    transparent 0,
+    black var(--marquee-fade),
+    black calc(100% - var(--marquee-fade)),
+    transparent 100%
+  );
+  mask-image: linear-gradient(
+    to right,
+    transparent 0,
+    black var(--marquee-fade),
+    black calc(100% - var(--marquee-fade)),
+    transparent 100%
+  );
+}
+
+@utility marquee-fade-overlay {
+  pointer-events: none;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: var(--marquee-fade);
+  z-index: 2;
+  /*
+   * Soft double-stop gradient keeps the fade subtle and premium — cards stay
+   * clearly visible until they're close to the edge, then dissolve smoothly.
+   */
+  background: linear-gradient(
+    to right,
+    var(--background) 0,
+    var(--background) 18%,
+    transparent 100%
+  );
+}
+
+@utility marquee-fade-overlay-left {
+  left: 0;
+}
+
+@utility marquee-fade-overlay-right {
+  right: 0;
+  transform: scaleX(-1);
+}
+
+/* Hide the gradient overlays when native CSS masks are supported. */
+@supports (mask-image: linear-gradient(black, black)) or
+  (-webkit-mask-image: linear-gradient(black, black)) {
+  .marquee-fade-overlay,
+  .marquee-fade-overlay-left,
+  .marquee-fade-overlay-right {
+    display: none;
+  }
+}
+
+/* Responsive fade width — slightly wider on large screens for a premium feel. */
+@media (min-width: 1024px) {
+  :root {
+    --marquee-fade: 120px;
+  }
+}
+
+@media (max-width: 640px) {
+  :root {
+    --marquee-fade: 80px;
+  }
+}
+
+@keyframes pulse-dot {
+  0%,
+  100% {
+    opacity: 1;
+    box-shadow: 0 0 0 0 color-mix(in oklab, var(--lime) 60%, transparent);
+  }
+  70% {
+    opacity: 0.8;
+    box-shadow: 0 0 0 8px transparent;
+  }
+}
+
+@utility pulse-dot {
+  animation: pulse-dot 2s ease-out infinite;
+}
+
+@keyframes float-y {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+@utility float-y {
+  animation: float-y 7s ease-in-out infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+  }
+}
