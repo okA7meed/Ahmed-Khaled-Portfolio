@@ -135,7 +135,8 @@ transition={{
                 <ArrowRight className="size-3.5 transition-transform group-hover:translate-x-1" />
               </a>
               <a
-                href={`mailto:${profile.email}`}
+                href="/Ahmed_Khaled_Hussain_CV.pdf"
+                download="Ahmed-Khaled-Hussain-CV.pdf"
                 className="group inline-flex items-center gap-2 border border-hairline font-mono uppercase transition-colors hover:border-lime hover:text-lime"
                 style={{
                   borderRadius: siteConfig.button.radius,
@@ -148,7 +149,7 @@ transition={{
                   letterSpacing: siteConfig.button.letterSpacing,
                 }}
               >
-                Contact me
+                Download CV
                 <Download className="size-3.5" />
               </a>
             </div>
