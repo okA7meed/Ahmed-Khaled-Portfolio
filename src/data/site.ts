@@ -191,24 +191,23 @@ export const experience = [
 export const projects = [
   {
     title: "BRGHR Restaurant Website",
-    description:
+description:
       "Modern restaurant ordering platform with real-time order tracking and admin dashboard.",
-    image:
-      "public/BRGHR Restaurant Website.png",
+    image: "/images/projects/project-brghr.png",
     websiteUrl: "https://brghr.vercel.app",
     technologies: ["React", "TypeScript", "MongoDB", "Tailwind"],
   },
   {
   title: "AOU Computer Science Study Planner",
-  description: "Academic progress tracking dashboard and smart study roadmap for Arab Open University students.",
-  image: "public/AOU Planner.png",
+description: "Academic progress tracking dashboard and smart study roadmap for Arab Open University students.",
+  image: "/images/projects/project-aou-planner.png",
   websiteUrl: "https://aou-planner.vercel.app",
   technologies: ["Next.js", "TypeScript", "Tailwind", "CSS", "JavaScript"]
   },
  {
   title: "Scented Realms",
-  description: "A production-ready luxury perfume e-commerce website with interactive 3D elements and modern animations.",
-  image: "public/Scented Realms.png",
+description: "A production-ready luxury perfume e-commerce website with interactive 3D elements and modern animations.",
+  image: "/images/projects/project-scented-realms.png",
   websiteUrl: "https://scented-realms.vercel.app",
   technologies: [
     "Next.js",
@@ -301,8 +300,8 @@ export const certificates = [
    {
     id: "cert-8",
     title: "English Language Course Level",
-    org: "The American University in Cairo (AUC)",
-    image: "public/certificates/certificate-9.jpg",
+org: "The American University in Cairo (AUC)",
+    image: "/certificates/certificate-9.jpg",
     url: null,
   },
 ];
