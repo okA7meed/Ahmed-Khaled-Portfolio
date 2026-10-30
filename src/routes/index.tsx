@@ -28,6 +28,14 @@ export const Route = createFileRoute("/")({
       { property: "og:description", content: description },
       { property: "og:type", content: "profile" },
       { name: "twitter:card", content: "summary_large_image" },
+      {
+  property: "og:image",
+  content: "https://ahmed-khaled-portfolio-ten.vercel.app/images/og-preview.png",
+},
+{
+  name: "twitter:image",
+  content: "https://ahmed-khaled-portfolio-ten.vercel.app/images/og-preview.png",
+},
     ],
     scripts: [
       {
