@@ -15,7 +15,7 @@ import { LanguageProvider, useLanguage } from "@/i18n/language";
 import { useEntrance } from "@/lib/entrance";
 import { useImageProtection } from "@/hooks/use-image-protection";
 
-const title = "Ahmed Khaled Hussain — AI Engineer | Full Stack Developer";
+const title = " Ahmed Khaled - Software Engineer ";
 const description =
   "AI Engineer and Full Stack Developer in Cairo, Egypt. Computer Science at Arab Open University — AI products, full stack apps, UI/UX and digital marketing.";
 

@@ -32,7 +32,7 @@ const dictionaries = {
     hero: {
       eyebrow: "متاح لفرص مناسبة · القاهرة، مصر",
       name: "أحمــد خالــد",
-      role: "مهندس ذكاء اصطناعي × مطور Full Stack",
+      role: "مهندس برمجيات × مطور Full Stack",
       intro:
         "أبني أنظمة ذكية ومنتجات رقمية متكاملة. أدرس علوم الحاسب في الجامعة العربية المفتوحة، وأعمل بين الذكاء الاصطناعي وتطوير الويب والتصميم.",
       primary: "شاهد المشاريع",
@@ -282,7 +282,7 @@ const dictionaries = {
     hero: {
       eyebrow: "Open to meaningful work · Cairo, Egypt",
       name: "Ahmed Khaled",
-      role: "AI Engineer × Full Stack Developer",
+      role: "Software Engineer × Full Stack Developer",
       intro:
         "I build intelligent systems and complete digital products. I study Computer Science at Arab Open University and work across AI, web development, and design.",
       primary: "Explore projects",
