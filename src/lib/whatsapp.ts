@@ -6,7 +6,7 @@
 // automatically and no backend or API credentials are involved.
 
 // WhatsApp number in international format (no "+", no spaces).
-export const WHATSAPP_NUMBER = "201206411015";
+export const WHATSAPP_NUMBER = "201043263308";
 
 const MESSAGE_TEMPLATE = `NEW PROJECT INQUIRY
 

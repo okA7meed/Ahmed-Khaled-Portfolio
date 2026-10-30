@@ -1,19 +1,19 @@
 export const profile = {
   name: "Ahmed Khaled Hussain",
-  role: "AI Engineer | Full Stack Developer",
+  role: "Software Engineer | Full Stack Developer",
   university: "Arab Open University",
   major: "Computer Science",
   location: "Shorouk City, Cairo — Egypt",
   languages: ["Arabic", "English"],
   email: "Ahmed.khaaledh@gmail.com",
-  phone: "01206411015",
-  whatsapp: "01206411015",
+  phone: "+20 104 326 3308",
+  whatsapp: "+20 104 326 3308",
   github: { handle: "okA7meed", url: "https://github.com/okA7meed" },
   linkedin: {
     handle: "in/ahmed-khaled-h",
     url: "https://www.linkedin.com/in/ahmed-khaled-h-197649349",
   },
-  instagram: { handle: "@enga7mmed", url: "https://www.instagram.com/enga7mmed" },
+  instagram: { handle: "@ahmed.khaaledh", url: "https://www.instagram.com/ahmed.khaaledh" },
   facebook: { handle: "ahmed.khaled", url: "https://www.facebook.com/share/1FtG2M2pSg" },
 };
 
