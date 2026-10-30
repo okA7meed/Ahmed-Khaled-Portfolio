@@ -1,0 +1,93 @@
+[
+  {
+    "pair": "light body",
+    "foreground": "#4e6374",
+    "background": "#f0f4f7",
+    "contrast": 5.65,
+    "passes45": true
+  },
+  {
+    "pair": "light heading",
+    "foreground": "#182c3b",
+    "background": "#fafbfc",
+    "contrast": 13.86,
+    "passes45": true
+  },
+  {
+    "pair": "light control",
+    "foreground": "#263f52",
+    "background": "#ffffff",
+    "contrast": 10.96,
+    "passes45": true
+  },
+  {
+    "pair": "light placeholder",
+    "foreground": "#5c7386",
+    "background": "#ffffff",
+    "contrast": 4.94,
+    "passes45": true
+  },
+  {
+    "pair": "light service detail",
+    "foreground": "#536a7a",
+    "background": "#f0f5f9",
+    "contrast": 5.16,
+    "passes45": true
+  },
+  {
+    "pair": "light stack level",
+    "foreground": "#526c80",
+    "background": "#edf3f8",
+    "contrast": 4.92,
+    "passes45": true
+  },
+  {
+    "pair": "light footer",
+    "foreground": "#4e687d",
+    "background": "#eaf0f5",
+    "contrast": 5.08,
+    "passes45": true
+  },
+  {
+    "pair": "light success",
+    "foreground": "#226941",
+    "background": "#f1f6fa",
+    "contrast": 6.1,
+    "passes45": true
+  },
+  {
+    "pair": "light tool hint",
+    "foreground": "#506a7e",
+    "background": "#eaf1f8",
+    "contrast": 4.98,
+    "passes45": true
+  },
+  {
+    "pair": "light pill tag",
+    "foreground": "#425e72",
+    "background": "#edf3f7",
+    "contrast": 6.1,
+    "passes45": true
+  },
+  {
+    "pair": "dark control",
+    "foreground": "#edf2f6",
+    "background": "#0d1015",
+    "contrast": 16.91,
+    "passes45": true
+  },
+  {
+    "pair": "dark body",
+    "foreground": "#b6bdc5",
+    "background": "#101316",
+    "contrast": 9.83,
+    "passes45": true
+  },
+  {
+    "pair": "light action",
+    "foreground": "#ffffff",
+    "background": "#203e54",
+    "contrast": 11.18,
+    "passes45": true
+  }
+]

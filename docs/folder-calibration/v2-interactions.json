@@ -1,0 +1,53 @@
+{
+  "environment": "jsdom state/semantics checks; not a physical touch-device test",
+  "results": [
+    {
+      "name": "Real project names, URLs and three real preview assets preserved",
+      "result": "PASS"
+    },
+    {
+      "name": "Keyboard focus reveals one folder",
+      "result": "PASS"
+    },
+    {
+      "name": "Escape closes while preserving focus",
+      "result": "PASS"
+    },
+    {
+      "name": "First touch reveals papers and prevents navigation",
+      "result": "PASS"
+    },
+    {
+      "name": "Second touch allows the real project link",
+      "result": "PASS"
+    },
+    {
+      "name": "Switching touch target opens only the new folder",
+      "result": "PASS"
+    },
+    {
+      "name": "Outside pointer closes the folder",
+      "result": "PASS"
+    },
+    {
+      "name": "Tool selection promotes exactly one tile",
+      "result": "PASS"
+    },
+    {
+      "name": "Escape clears tool selection",
+      "result": "PASS"
+    },
+    {
+      "name": "Keyboard activation remains a normal link after touch use",
+      "result": "PASS"
+    },
+    {
+      "name": "Blur closes keyboard folder",
+      "result": "PASS"
+    },
+    {
+      "name": "English labels and direction remain available",
+      "result": "PASS"
+    }
+  ]
+}

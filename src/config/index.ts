@@ -12,4 +12,3 @@ export * from "./animations";
 export * from "./navbar";
 export * from "./theme";
 export { siteConfig } from "./site.config";
-export type { SiteConfig } from "./site.config";

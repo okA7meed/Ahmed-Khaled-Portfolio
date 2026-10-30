@@ -1,0 +1,92 @@
+/* One family throughout: the original thmanyah serif display files, already
+   used for this portfolio's headings, now served locally at every weight. */
+@font-face {
+  font-family: "Thmanyah";
+  src: url("/fonts/thmanyah/thmanyah-300.woff2") format("woff2");
+  font-style: normal;
+  font-weight: 300;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Thmanyah";
+  src: url("/fonts/thmanyah/thmanyah-400.woff2") format("woff2");
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Thmanyah";
+  src: url("/fonts/thmanyah/thmanyah-500.woff2") format("woff2");
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Thmanyah";
+  src: url("/fonts/thmanyah/thmanyah-700.woff2") format("woff2");
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Thmanyah";
+  src: url("/fonts/thmanyah/thmanyah-900.woff2") format("woff2");
+  font-style: normal;
+  font-weight: 900;
+  font-display: swap;
+}
+
+/* The legacy serif/sans/mono tokens intentionally point to the same family.
+   Tailwind utilities and native controls follow it too. */
+:root {
+  --font-primary: "Thmanyah";
+  --font-sans: var(--font-primary);
+  --font-serif: var(--font-primary);
+  --font-mono: var(--font-primary);
+}
+
+body,
+button,
+input,
+textarea,
+select,
+option,
+code,
+pre,
+kbd,
+samp,
+::placeholder {
+  font-family: var(--font-primary);
+  font-feature-settings:
+    "ss01" 1,
+    "kern" 1,
+    "liga" 1;
+  font-kerning: normal;
+}
+
+/* Arabic's joins and stylistic extensions need natural spacing. Keep explicit
+   Latin fragments (project names, addresses and URLs) in their own direction. */
+html:lang(ar) body {
+  letter-spacing: normal;
+}
+html:lang(ar) .portfolio :not([dir="ltr"]):not([dir="ltr"] *) {
+  letter-spacing: normal;
+}
+
+/* Group and heading styles inherit this as well as body copy and controls.
+   ss01 selects the font's own extended glyphs without altering the text. */
+.portfolio,
+.portfolio * {
+  font-feature-settings:
+    "ss01" 1,
+    "kern" 1,
+    "liga" 1;
+}
+
+.timeline-period__arrow {
+  display: inline-block;
+  width: 1em;
+  height: 1em;
+  margin-inline-end: 0.35em;
+  vertical-align: -0.12em;
+}

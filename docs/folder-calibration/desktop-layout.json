@@ -1,0 +1,95 @@
+{
+  "blur": true,
+  "folders": [
+    {
+      "bottomDelta": 0,
+      "face": {
+        "bottom": 633.359375,
+        "height": 121.4609375,
+        "left": 335.734375,
+        "right": 585.296875,
+        "top": 511.8984375,
+        "width": 249.5625,
+        "x": 335.734375,
+        "y": 511.8984375
+      },
+      "shell": {
+        "bottom": 633.359375,
+        "height": 166.375,
+        "left": 335.734375,
+        "right": 585.296875,
+        "top": 466.984375,
+        "width": 249.5625,
+        "x": 335.734375,
+        "y": 466.984375
+      },
+      "topOffset": 44.9140625
+    },
+    {
+      "bottomDelta": 0,
+      "face": {
+        "bottom": 633.359375,
+        "height": 97.26007080078124,
+        "left": 592.19189453125,
+        "right": 872.58935546875,
+        "top": 536.0993041992188,
+        "width": 280.3974609375,
+        "x": 592.19189453125,
+        "y": 536.0993041992188
+      },
+      "shell": {
+        "bottom": 633.359375,
+        "height": 166.375,
+        "left": 607.609375,
+        "right": 857.171875,
+        "top": 466.984375,
+        "width": 249.5625,
+        "x": 607.609375,
+        "y": 466.984375
+      },
+      "topOffset": 69.11492919921875
+    },
+    {
+      "bottomDelta": 0,
+      "face": {
+        "bottom": 633.359375,
+        "height": 121.4609375,
+        "left": 879.484375,
+        "right": 1129.046875,
+        "top": 511.8984375,
+        "width": 249.5625,
+        "x": 879.484375,
+        "y": 511.8984375
+      },
+      "shell": {
+        "bottom": 633.359375,
+        "height": 166.375,
+        "left": 879.484375,
+        "right": 1129.046875,
+        "top": 466.984375,
+        "width": 249.5625,
+        "x": 879.484375,
+        "y": 466.984375
+      },
+      "topOffset": 44.9140625
+    }
+  ],
+  "height": 1000,
+  "images": [
+    {
+      "loaded": true,
+      "src": "/images/projects/project-brghr.png"
+    },
+    {
+      "loaded": true,
+      "src": "/images/projects/project-aou-planner.png"
+    },
+    {
+      "loaded": true,
+      "src": "/images/projects/project-scented-realms.png"
+    }
+  ],
+  "masks": true,
+  "section": 1440,
+  "width": 1440
+}

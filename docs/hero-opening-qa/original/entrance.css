@@ -1,0 +1,48 @@
+/* Translation is independent of transform, keeping folder hinges, tile rotation
+   and the scroll link's centering intact. No persistent stacking context at rest. */
+@keyframes portfolio-enter {
+  from {
+    opacity: 0;
+    translate: 0 var(--entrance-distance, 22px);
+  }
+  to {
+    opacity: 1;
+    translate: 0 0;
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  /* The tiny head bootstrap runs before first paint. Its two-second fallback
+     releases this rule if hydration fails, so content cannot stay hidden. */
+  [data-entrance-boot="pending"] [data-entrance]:not([data-entrance-state]) {
+    opacity: 0;
+  }
+  [data-entrance-state="waiting"] {
+    opacity: 0;
+    translate: 0 var(--entrance-distance, 22px);
+  }
+  [data-entrance-state="entering"] {
+    animation: portfolio-enter var(--entrance-duration, 700ms)
+      cubic-bezier(0.22, 1, 0.36, 1) var(--entrance-delay, 0s) both;
+  }
+}
+
+.entrance-word {
+  display: inline-block;
+  vertical-align: baseline;
+}
+
+/* Focus always wins, even before the observer or animation event is delivered. */
+[data-entrance]:focus-within {
+  opacity: 1 !important;
+  translate: none !important;
+  animation: none !important;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  [data-entrance] {
+    opacity: 1 !important;
+    translate: none !important;
+    animation: none !important;
+  }
+}

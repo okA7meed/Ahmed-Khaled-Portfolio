@@ -191,35 +191,37 @@ export const experience = [
 export const projects = [
   {
     title: "BRGHR Restaurant Website",
-description:
+    description:
       "Modern restaurant ordering platform with real-time order tracking and admin dashboard.",
     image: "/images/projects/project-brghr.png",
     websiteUrl: "https://brghr.vercel.app",
     technologies: ["React", "TypeScript", "MongoDB", "Tailwind"],
   },
   {
-  title: "AOU Computer Science Study Planner",
-description: "Academic progress tracking dashboard and smart study roadmap for Arab Open University students.",
-  image: "/images/projects/project-aou-planner.png",
-  websiteUrl: "https://aou-planner.vercel.app",
-  technologies: ["Next.js", "TypeScript", "Tailwind", "CSS", "JavaScript"]
+    title: "AOU Computer Science Study Planner",
+    description:
+      "Academic progress tracking dashboard and smart study roadmap for Arab Open University students.",
+    image: "/images/projects/project-aou-planner.png",
+    websiteUrl: "https://aou-planner.vercel.app",
+    technologies: ["Next.js", "TypeScript", "Tailwind", "CSS", "JavaScript"],
   },
- {
-  title: "Scented Realms",
-description: "A production-ready luxury perfume e-commerce website with interactive 3D elements and modern animations.",
-  image: "/images/projects/project-scented-realms.png",
-  websiteUrl: "https://scented-realms.vercel.app",
-  technologies: [
-    "Next.js",
-    "React",
-    "TypeScript",
-    "Tailwind CSS",
-    "Three.js",
-    "Framer Motion",
-    "GSAP",
-    "Shadcn/UI"
-  ]
-}
+  {
+    title: "Scented Realms",
+    description:
+      "A production-ready luxury perfume e-commerce website with interactive 3D elements and modern animations.",
+    image: "/images/projects/project-scented-realms.png",
+    websiteUrl: "https://scented-realms.vercel.app",
+    technologies: [
+      "Next.js",
+      "React",
+      "TypeScript",
+      "Tailwind CSS",
+      "Three.js",
+      "Framer Motion",
+      "GSAP",
+      "Shadcn/UI",
+    ],
+  },
 ];
 
 export const certifications = [
@@ -297,10 +299,10 @@ export const certificates = [
     image: "/certificates/certificate-8.png",
     url: null,
   },
-   {
-    id: "cert-8",
+  {
+    id: "cert-9",
     title: "English Language Course Level",
-org: "The American University in Cairo (AUC)",
+    org: "The American University in Cairo (AUC)",
     image: "/certificates/certificate-9.jpg",
     url: null,
   },

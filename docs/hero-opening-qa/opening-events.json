@@ -1,0 +1,464 @@
+[
+  {
+    "event": "start",
+    "name": "portfolio-enter",
+    "class": "site-nav__bar",
+    "tag": "DIV",
+    "time": 1266.9000000059605
+  },
+  {
+    "event": "end",
+    "name": "portfolio-enter",
+    "class": "site-nav__bar",
+    "tag": "DIV",
+    "time": 1849.9000000059605
+  },
+  {
+    "event": "start",
+    "name": "portfolio-enter",
+    "class": "site-nav__brand",
+    "text": "",
+    "tag": "A",
+    "time": 1949.800000011921
+  },
+  {
+    "event": "end",
+    "name": "portfolio-enter",
+    "class": "site-nav__brand",
+    "tag": "A",
+    "time": 2266.7000000029802
+  },
+  {
+    "event": "start",
+    "name": "portfolio-enter",
+    "class": "is-active",
+    "text": "المشاريع",
+    "tag": "A",
+    "time": 2300.6000000089407
+  },
+  {
+    "event": "start",
+    "name": "portfolio-enter",
+    "class": "",
+    "text": "نبذة",
+    "tag": "A",
+    "time": 2366.6000000089407
+  },
+  {
+    "event": "start",
+    "name": "portfolio-enter",
+    "class": "",
+    "text": "الخدمات",
+    "tag": "A",
+    "time": 2450
+  },
+  {
+    "event": "start",
+    "name": "portfolio-enter",
+    "class": "",
+    "text": "الأدوات",
+    "tag": "A",
+    "time": 2516.4000000059605
+  },
+  {
+    "event": "start",
+    "name": "portfolio-enter",
+    "class": "",
+    "text": "المسار",
+    "tag": "A",
+    "time": 2599.800000011921
+  },
+  {
+    "event": "end",
+    "name": "portfolio-enter",
+    "class": "is-active",
+    "tag": "A",
+    "time": 2616.5
+  },
+  {
+    "event": "start",
+    "name": "portfolio-enter",
+    "class": "",
+    "text": "الشهادات",
+    "tag": "A",
+    "time": 2667.300000011921
+  },
+  {
+    "event": "end",
+    "name": "portfolio-enter",
+    "class": "",
+    "tag": "A",
+    "time": 2699.9000000059605
+  },
+  {
+    "event": "start",
+    "name": "portfolio-enter",
+    "class": "",
+    "text": "أعمال أخرى",
+    "tag": "A",
+    "time": 2750
+  },
+  {
+    "event": "end",
+    "name": "portfolio-enter",
+    "class": "",
+    "tag": "A",
+    "time": 2766.4000000059605
+  },
+  {
+    "event": "start",
+    "name": "portfolio-enter",
+    "class": "",
+    "text": "تواصل",
+    "tag": "A",
+    "time": 2816.4000000059605
+  },
+  {
+    "event": "end",
+    "name": "portfolio-enter",
+    "class": "",
+    "tag": "A",
+    "time": 2849.800000011921
+  },
+  {
+    "event": "end",
+    "name": "portfolio-enter",
+    "class": "",
+    "tag": "A",
+    "time": 2917.2000000029802
+  },
+  {
+    "event": "end",
+    "name": "portfolio-enter",
+    "class": "",
+    "tag": "A",
+    "time": 2999.800000011921
+  },
+  {
+    "event": "end",
+    "name": "portfolio-enter",
+    "class": "",
+    "tag": "A",
+    "time": 3067.300000011921
+  },
+  {
+    "event": "end",
+    "name": "portfolio-enter",
+    "class": "",
+    "tag": "A",
+    "time": 3149.9000000059605
+  },
+  {
+    "event": "start",
+    "name": "portfolio-enter",
+    "class": "theme-toggle",
+    "tag": "BUTTON",
+    "time": 3217.300000011921
+  },
+  {
+    "event": "start",
+    "name": "portfolio-enter",
+    "class": "language-toggle",
+    "tag": "BUTTON",
+    "time": 3333.800000011921
+  },
+  {
+    "event": "end",
+    "name": "portfolio-enter",
+    "class": "theme-toggle",
+    "tag": "BUTTON",
+    "time": 3499.9000000059605
+  },
+  {
+    "event": "end",
+    "name": "portfolio-enter",
+    "class": "language-toggle",
+    "tag": "BUTTON",
+    "time": 3616.4000000059605
+  },
+  {
+    "event": "start",
+    "name": "portfolio-enter",
+    "class": "site-nav__cta",
+    "text": "ابدأ مشروعك",
+    "tag": "A",
+    "time": 3683.1000000089407
+  },
+  {
+    "event": "end",
+    "name": "portfolio-enter",
+    "class": "site-nav__cta",
+    "tag": "A",
+    "time": 4000
+  },
+  {
+    "event": "start",
+    "name": "portfolio-enter",
+    "class": "hero__eyebrow",
+    "tag": "P",
+    "time": 4099.9000000059605
+  },
+  {
+    "event": "end",
+    "name": "portfolio-enter",
+    "class": "hero__eyebrow",
+    "tag": "P",
+    "time": 4499.800000011921
+  },
+  {
+    "event": "start",
+    "name": "portfolio-enter",
+    "class": "hero__title",
+    "tag": "H1",
+    "time": 4533.100000008941
+  },
+  {
+    "event": "end",
+    "name": "portfolio-enter",
+    "class": "hero__title",
+    "tag": "H1",
+    "time": 5034.100000008941
+  },
+  {
+    "event": "start",
+    "name": "portfolio-enter",
+    "class": "hero__role",
+    "tag": "P",
+    "time": 5083.100000008941
+  },
+  {
+    "event": "end",
+    "name": "portfolio-enter",
+    "class": "hero__role",
+    "tag": "P",
+    "time": 5433
+  },
+  {
+    "event": "start",
+    "name": "portfolio-enter",
+    "class": "hero__intro",
+    "tag": "P",
+    "time": 5483.4000000059605
+  },
+  {
+    "event": "end",
+    "name": "portfolio-enter",
+    "class": "hero__intro",
+    "tag": "P",
+    "time": 5883
+  },
+  {
+    "event": "start",
+    "name": "portfolio-enter",
+    "class": "button button--ink",
+    "text": "شاهد المشاريع",
+    "tag": "A",
+    "time": 5916.5
+  },
+  {
+    "event": "start",
+    "name": "portfolio-enter",
+    "class": "button button--outline",
+    "text": "تواصل معي",
+    "tag": "A",
+    "time": 6099.70000000298
+  },
+  {
+    "event": "end",
+    "name": "portfolio-enter",
+    "class": "button button--ink",
+    "tag": "A",
+    "time": 6216.5
+  },
+  {
+    "event": "start",
+    "name": "portfolio-enter",
+    "class": "hero__cv",
+    "text": "حمّل السيرة الذاتية",
+    "tag": "A",
+    "time": 6284
+  },
+  {
+    "event": "start",
+    "name": "portfolio-enter",
+    "class": "hero__socials",
+    "tag": "DIV",
+    "time": 6366.5
+  },
+  {
+    "event": "start",
+    "name": "portfolio-enter",
+    "class": "hero__scroll",
+    "text": "مرّر للاكتشاف",
+    "tag": "A",
+    "time": 6366.600000008941
+  },
+  {
+    "event": "start",
+    "name": "portfolio-enter",
+    "class": "hero__number",
+    "tag": "SPAN",
+    "time": 6366.600000008941
+  },
+  {
+    "event": "end",
+    "name": "portfolio-enter",
+    "class": "button button--outline",
+    "tag": "A",
+    "time": 6400.600000008941
+  },
+  {
+    "event": "end",
+    "name": "portfolio-enter",
+    "class": "hero__cv",
+    "tag": "A",
+    "time": 6583.9000000059605
+  },
+  {
+    "event": "end",
+    "name": "portfolio-enter",
+    "class": "hero__socials",
+    "tag": "DIV",
+    "time": 6666.5
+  },
+  {
+    "event": "end",
+    "name": "portfolio-enter",
+    "class": "hero__scroll",
+    "tag": "A",
+    "time": 6666.5
+  },
+  {
+    "event": "end",
+    "name": "portfolio-enter",
+    "class": "hero__number",
+    "tag": "SPAN",
+    "time": 6666.600000008941
+  },
+  {
+    "event": "start",
+    "name": "portfolio-enter",
+    "class": "hero__portrait-scene",
+    "tag": "DIV",
+    "time": 6717.5
+  },
+  {
+    "event": "end",
+    "name": "portfolio-enter",
+    "class": "hero__portrait-scene",
+    "tag": "DIV",
+    "time": 7383.20000000298
+  },
+  {
+    "event": "start",
+    "name": "portfolio-signature",
+    "class": "hero__signature",
+    "tag": "DIV",
+    "time": 7433.100000008941
+  },
+  {
+    "event": "start",
+    "name": "portfolio-pen",
+    "class": null,
+    "tag": "path",
+    "time": 7433.100000008941
+  },
+  {
+    "event": "start",
+    "name": "portfolio-pen",
+    "class": null,
+    "tag": "path",
+    "time": 7566.20000000298
+  },
+  {
+    "event": "start",
+    "name": "portfolio-pen",
+    "class": null,
+    "tag": "path",
+    "time": 7683.300000011921
+  },
+  {
+    "event": "start",
+    "name": "portfolio-pen",
+    "class": null,
+    "tag": "path",
+    "time": 7817.5
+  },
+  {
+    "event": "start",
+    "name": "portfolio-pen",
+    "class": null,
+    "tag": "path",
+    "time": 7934.100000008941
+  },
+  {
+    "event": "start",
+    "name": "portfolio-pen",
+    "class": null,
+    "tag": "path",
+    "time": 8067.600000008941
+  },
+  {
+    "event": "start",
+    "name": "portfolio-pen",
+    "class": null,
+    "tag": "path",
+    "time": 8183.4000000059605
+  },
+  {
+    "event": "start",
+    "name": "portfolio-pen",
+    "class": null,
+    "tag": "path",
+    "time": 8316.60000000894
+  },
+  {
+    "event": "start",
+    "name": "portfolio-pen",
+    "class": null,
+    "tag": "path",
+    "time": 8432.800000011921
+  },
+  {
+    "event": "start",
+    "name": "portfolio-pen",
+    "class": null,
+    "tag": "path",
+    "time": 8566.20000000298
+  },
+  {
+    "event": "start",
+    "name": "portfolio-pen",
+    "class": null,
+    "tag": "path",
+    "time": 8683.300000011921
+  },
+  {
+    "event": "start",
+    "name": "portfolio-pen",
+    "class": null,
+    "tag": "path",
+    "time": 8817.300000011921
+  },
+  {
+    "event": "start",
+    "name": "portfolio-pen",
+    "class": null,
+    "tag": "path",
+    "time": 8933.300000011921
+  },
+  {
+    "event": "start",
+    "name": "portfolio-pen",
+    "class": null,
+    "tag": "path",
+    "time": 9067.10000000894
+  },
+  {
+    "event": "end",
+    "name": "portfolio-signature",
+    "class": "hero__signature",
+    "tag": "DIV",
+    "time": 9633.40000000596
+  }
+]

@@ -1,20 +1,21 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { LoadingScreen, Marquee, MouseGlow, SmoothScroll } from "@/components/fx";
 import { Nav } from "@/components/nav";
 import { Hero } from "@/components/hero";
 import { About } from "@/components/sections/about";
 import { Services } from "@/components/sections/services";
 import { Stack } from "@/components/sections/stack";
 import { Timeline } from "@/components/sections/timeline";
-import { Projects } from "@/components/sections/projects";
+import { PortfolioFolders } from "@/components/sections/portfolio-folders";
 import { Awards } from "@/components/sections/awards";
 import { Work } from "@/components/sections/work";
 import { Contact } from "@/components/sections/contact";
 import { Footer } from "@/components/sections/footer";
-import { marquee } from "@/data/site";
-import { siteConfig } from "@/config";
+import { profile } from "@/data/site";
+import { LanguageProvider, useLanguage } from "@/i18n/language";
+import { useEntrance } from "@/lib/entrance";
+import { useImageProtection } from "@/hooks/use-image-protection";
 
-const title = `${siteConfig.name} — ${siteConfig.role}`;
+const title = "Ahmed Khaled Hussain — AI Engineer | Full Stack Developer";
 const description =
   "AI Engineer and Full Stack Developer in Cairo, Egypt. Computer Science at Arab Open University — AI products, full stack apps, UI/UX and digital marketing.";
 
@@ -34,10 +35,17 @@ export const Route = createFileRoute("/")({
         children: JSON.stringify({
           "@context": "https://schema.org",
           "@type": "Person",
-          name: "Ahmed Khaled Hussain",
-          jobTitle: "AI Engineer & Full Stack Developer",
+          name: profile.name,
+          jobTitle: profile.role,
+          email: profile.email,
           address: { "@type": "PostalAddress", addressLocality: "Cairo", addressCountry: "EG" },
           description,
+          sameAs: [
+            profile.github.url,
+            profile.linkedin.url,
+            profile.instagram.url,
+            profile.facebook.url,
+          ],
         }),
       },
     ],
@@ -47,30 +55,34 @@ export const Route = createFileRoute("/")({
 
 function Index() {
   return (
-    <>
-      <LoadingScreen />
-      <SmoothScroll />
-      <MouseGlow />
-      <a
-        href="#about"
-        className="sr-only rounded-sm bg-lime px-4 py-2 font-mono text-xs text-primary-foreground focus:not-sr-only focus:fixed focus:top-4 focus:left-4 focus:z-[80]"
-      >
-        Skip to content
+    <LanguageProvider>
+      <Portfolio />
+    </LanguageProvider>
+  );
+}
+
+function Portfolio() {
+  const { language } = useLanguage();
+  const entranceRef = useEntrance();
+  useImageProtection();
+  return (
+    <div className="portfolio" data-language={language} ref={entranceRef}>
+      <a className="skip-link" href="#main">
+        {language === "ar" ? "تخطي إلى المحتوى" : "Skip to content"}
       </a>
       <Nav />
       <main id="main">
         <Hero />
-        <Marquee items={marquee} />
+        <PortfolioFolders language={language} />
         <About />
         <Services />
         <Stack />
         <Timeline />
-        <Projects />
         <Awards />
         <Work />
         <Contact />
       </main>
       <Footer />
-    </>
+    </div>
   );
 }

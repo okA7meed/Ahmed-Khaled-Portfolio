@@ -1,0 +1,27 @@
+[
+  {
+    "file": "opening-0.jpg",
+    "requestMs": 145,
+    "completeMs": 501
+  },
+  {
+    "file": "opening-1.jpg",
+    "requestMs": 501,
+    "completeMs": 800
+  },
+  {
+    "file": "opening-2.jpg",
+    "requestMs": 800,
+    "completeMs": 1198
+  },
+  {
+    "file": "opening-3.jpg",
+    "requestMs": 1198,
+    "completeMs": 1604
+  },
+  {
+    "file": "opening-4.jpg",
+    "requestMs": 1604,
+    "completeMs": 1851
+  }
+]

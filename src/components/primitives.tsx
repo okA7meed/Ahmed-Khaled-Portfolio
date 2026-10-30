@@ -64,7 +64,7 @@ export function Section({
   className?: string;
 }) {
   return (
-<section
+    <section
       id={id}
       className={`relative mx-auto w-full scroll-mt-24 ${className}`}
       style={{

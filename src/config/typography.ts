@@ -5,9 +5,9 @@
  */
 export const TYPOGRAPHY = {
   // Font families
-  primaryFont: "Space Grotesk",
-  secondaryFont: "JetBrains Mono",
-  displayFont: "Syne",
+  primaryFont: "Thmanyah",
+  secondaryFont: "Thmanyah",
+  displayFont: "Thmanyah",
 
   // Weights
   headingWeight: 800,

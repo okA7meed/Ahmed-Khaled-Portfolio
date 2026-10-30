@@ -1,0 +1,23 @@
+{
+  "project": "/Users/mac/Downloads/ahmed-khaled-portfolio",
+  "protectedFilesUnchanged": 32,
+  "allUserCopyAndLocalizedDataPreserved": true,
+  "allOriginalImagesAndFontsPreserved": true,
+  "folderGeometryAndInteractionCodePreserved": true,
+  "entranceCodePreserved": true,
+  "modifiedFiles": [
+    "src/styles.css",
+    "src/config/theme.ts",
+    "src/components/nav.tsx",
+    "src/hooks/use-theme.tsx",
+    "src/lib/error-page.ts",
+    "src/i18n/language.tsx",
+    "src/routes/__root.tsx",
+    "src/components/sections/stack.tsx"
+  ],
+  "newFiles": [
+    "src/themes.css",
+    "src/lib/theme.ts"
+  ],
+  "removedFiles": []
+}

@@ -1,0 +1,59 @@
+Window: "Folder browser diagnostics", App: Safari.
+0 standard window Folder browser diagnostics, ID: SafariWindow?IsSecure=false&UUID=8308C341-2A76-4CEC-8C96-9FD4301BDD90, Secondary Actions: Raise
+	1 split group
+		2 tab group
+			3 scroll area
+				4 HTML content Description: Folder browser diagnostics, URL: 127.0.0.1:5173/folder-diagnostics.html
+					5 button Read computed folder styles
+					6 text entry area (settable) Diagnostic results, Value: [text entry area: Diagnostic results]
+						7 text (settable) {"ua":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/27.0 Safari/605.1.15","css":["http://127.0.0.1:5173/src/styles.css","/Users/mac/.codex/visualizations/2026/10/25/01a1753a-5371-78e2-aa97-d0afdf4d3c18/project/ahmed-khaled-portfolio/src/components/sections/portfolio-folders.css"],"styles":[{"selector":".pf-section","transform":"none","mask":"none","webkitMask":"none","left":"0px","top":"0px","color":"rgb(246, 247, 247)","back":"none","vars":{"r":"","y":"",
+					8 text {"selector":".pf-section","transform":"none","mask":"none","left":"0px","vars":{"r":"","y":"","rest":"","maskPresent":true}}
+					9 text {"selector":".pf-project-back","transform":"none","mask":"url(\"data:image/svg+xml,%3Csvg xmlns='http://www.w","left":"1px","vars":{"r":"","y":"","rest":"","maskPresent":true}}
+					10 text {"selector":".pf-project-sheet","transform":"matrix(0.999391, -0.034899, 0.034899, 0.999391, 0, 50.032501)","mask":"none","left":"23.421875px","vars":{"r":"","y":"","rest":"42%","maskPresent":true}}
+					11 text {"selector":".pf-tool-icon","transform":"matrix(0.956305, -0.292372, 0.292372, 0.956305, -24.5, 20)","mask":"none","left":"46.234375px","vars":{"r":"-17deg","y":"20px","rest":"","maskPresent":true}}
+					12 text {"selector":".site-nav__link","vars":{"maskPresent":false}}
+					13 scroll area
+						14 HTML content 127.0.0.1:5173/#projects
+							15 link تخطي إلى المحتوى, Value: 127.0.0.1:5173/#main
+							16 container
+								17 link أحمد خالد — العودة إلى البداية, Value: 127.0.0.1:5173/#top
+								18 container التنقل الرئيسي
+									19 link المشاريع, Value: 127.0.0.1:5173/#projects
+									20 link نبذة, Value: 127.0.0.1:5173/#about
+									21 link الخدمات, Value: 127.0.0.1:5173/#services
+									22 link الأدوات, Value: 127.0.0.1:5173/#stack
+									23 link المسار, Value: 127.0.0.1:5173/#timeline
+									24 link الشهادات, Value: 127.0.0.1:5173/#awards
+									25 link أعمال أخرى, Value: 127.0.0.1:5173/#work
+									26 link تواصل, Value: 127.0.0.1:5173/#contact
+								27 button Switch to English
+								28 link ابدأ مشروعًا, Value: 127.0.0.1:5173/#contact
+							29 container
+								30 container أحمد خالد
+									31 text متاح لفرص مناسبة · القاهرة، مصر
+									32 heading أحمد خالد, Value: 1
+										33 text أحمد خالد
+									34 text مهندس ذكاء اصطناعي × مطور Full Stack
+									35 text أبني أنظمة ذكية ومنتجات رقمية متكاملة. أدرس علوم الحاسب في الجامعة العربية المفتوحة، وأعمل بين الذكاء الاصطناعي وتطوير الويب والتصميم.
+									36 link شاهد المشاريع, Value: 127.0.0.1:5173/#projects
+									37 link تواصل معي, Value: 127.0.0.1:5173/#contact
+									38 link حمّل السيرة الذاتية, Value: 127.0.0.1:5173/Ahmed_Khaled_Hussain_CV.pdf
+									39 container روابط التواصل
+										40 link GitHub, Value: github.com/okA7meed
+										41 link LinkedIn, Value: linkedin.com/in/ahmed-khaled-h-197649349
+										42 text الشروق، القاهرة — مصر
+									43 link مرّر للاكتشاف, Value: 127.0.0.1:5173/#projects
+								44 container مشاريعي
+									45 container مجلد الأدوات
+										46 toggle button تقنية: Python, Value: off
+										47 toggle button تقنية: React, Value: off
+										48 toggle button تقنية: TypeScript, Value: off
+										49 toggle button تقنية: Next.js, Value: off
+										50 toggle button تقنية: PostgreSQL, Value: off
+										51 toggle button تقنية: Figma, Value: off
+										52 toggle button تقنية: Node.js, Value: off
+										53 text مجلد الأدوات مزيج قوي من التقنيات التي أستخدمها في تطوير المشاريع
+										54 toggle button Python, Value: off
+										55 toggle button React, Value: off
+										56 toggle button TypeScript, Value: off
+										57 toggle butt

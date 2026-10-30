@@ -40,4 +40,3 @@ export function buildWhatsAppMessage(input: {
 export function buildWhatsAppUrl(message: string): string {
   return `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(message)}`;
 }
-

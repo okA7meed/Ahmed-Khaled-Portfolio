@@ -1,0 +1,37 @@
+{
+  "environment": "jsdom with real Nav, Hero, Contact and both providers; verifies state/semantics, not visual layout",
+  "results": [
+    {
+      "name": "Default is midnight, with accessible icon-only language and appearance buttons",
+      "result": "PASS"
+    },
+    {
+      "name": "A theme change preserves typed contact data, focus and the current URL",
+      "result": "PASS"
+    },
+    {
+      "name": "Saved light is applied before hydration and is not overwritten by a default dark write",
+      "result": "PASS"
+    },
+    {
+      "name": "Arabic/English switching keeps the active theme and both controls remain usable",
+      "result": "PASS"
+    },
+    {
+      "name": "Mobile-menu state survives an appearance switch and the localized links remain present",
+      "result": "PASS"
+    },
+    {
+      "name": "Cross-tab preference changes synchronize; unrelated storage changes do not change appearance",
+      "result": "PASS"
+    },
+    {
+      "name": "Invalid or cleared preferences safely return to the configured dark default",
+      "result": "PASS"
+    },
+    {
+      "name": "Blocked storage does not break initial render, language switching or theme toggling",
+      "result": "PASS"
+    }
+  ]
+}

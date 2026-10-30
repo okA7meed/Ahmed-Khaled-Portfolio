@@ -1,0 +1,120 @@
+{
+  "results": [
+    {
+      "name": "Development server responds",
+      "pass": true
+    },
+    {
+      "name": "Settled navbar frame is empty before brand enters",
+      "pass": true,
+      "frame": 1,
+      "brand": 0,
+      "links": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "hero": 0
+    },
+    {
+      "name": "Brand starts after frame settles",
+      "pass": true
+    },
+    {
+      "name": "All eight links enter in order",
+      "pass": true,
+      "order": [
+        "المشاريع",
+        "نبذة",
+        "الخدمات",
+        "الأدوات",
+        "المسار",
+        "الشهادات",
+        "أعمال أخرى",
+        "تواصل"
+      ]
+    },
+    {
+      "name": "Theme, language and project button follow links",
+      "pass": true
+    },
+    {
+      "name": "Hero availability follows completed navbar contents",
+      "pass": true
+    },
+    {
+      "name": "Title, role, description, buttons and portrait enter in order",
+      "pass": true
+    },
+    {
+      "name": "SVG handwriting starts after portrait settles",
+      "pass": true
+    },
+    {
+      "name": "All signature strokes draw in sequence",
+      "pass": true
+    },
+    {
+      "name": "All original sections remain",
+      "pass": true
+    },
+    {
+      "name": "Portrait loaded",
+      "pass": true
+    },
+    {
+      "name": "Resume download returns PDF",
+      "pass": true
+    },
+    {
+      "name": "English translation works",
+      "pass": true
+    },
+    {
+      "name": "Light theme works",
+      "pass": true
+    },
+    {
+      "name": "Theme persists on refresh",
+      "pass": true
+    },
+    {
+      "name": "Reduced motion releases all opening content",
+      "pass": true
+    },
+    {
+      "name": "No title, navbar or page overflow across 20 language/size combinations",
+      "pass": true,
+      "failures": []
+    },
+    {
+      "name": "Mobile menu opens",
+      "pass": true
+    },
+    {
+      "name": "Mobile navigation scrolls and closes menu",
+      "pass": true
+    },
+    {
+      "name": "Reduced motion from first load shows final signature",
+      "pass": true
+    },
+    {
+      "name": "Content remains visible without JavaScript",
+      "pass": true
+    },
+    {
+      "name": "No browser runtime errors",
+      "pass": true,
+      "issues": []
+    }
+  ],
+  "passed": 22,
+  "total": 22,
+  "issues": []
+}

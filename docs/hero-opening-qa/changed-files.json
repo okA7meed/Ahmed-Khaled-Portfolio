@@ -1,0 +1,42 @@
+[
+  {
+    "file": "src/components/hero.tsx",
+    "before_sha256": "4d85a188cfa2d61a18302735897eb75739e73ff64a9a0f28f25272cc8a873586",
+    "after_sha256": "8a9f86437432d8ba19c3c7c45fc1f8d3210cf4192b33ec6fa12a200174cef2a3"
+  },
+  {
+    "file": "src/components/nav.tsx",
+    "before_sha256": "47d8ad19f39cce4af984e06fa3352c93dee282fd9a95e83232c84fc8e1436ffc",
+    "after_sha256": "4dab0c1b61b9c177e407064c82a6d554c5779e847865dc90b52c4a57545c256c"
+  },
+  {
+    "file": "src/lib/entrance.ts",
+    "before_sha256": "948cd8633bd3acf23885acfc4121adc59c9753102e8a33f9e2a7dcdc109ecdfe",
+    "after_sha256": "f8e73194cf50d5393a68e4de42924eed578584a54727f0cad781faba8e022a94"
+  },
+  {
+    "file": "src/entrance.css",
+    "before_sha256": "d0ad738dd280c5bdee3827b9e94b7115a0cc7bc9b655de31418055aed73733a0",
+    "after_sha256": "cec3985818dfcee76c531e6040afe2ead8241724683b25874035ec3be3eded58"
+  },
+  {
+    "file": "src/styles.css",
+    "before_sha256": "b51062122d945f40393bc933a97d62ebc3b8a81dc6a25d89a7759db9a543fa92",
+    "after_sha256": "11fecd93128cb779bae3c95d73447ccf5da387599d8afd5f1701c78ed11b577a"
+  },
+  {
+    "file": "src/config/portrait.ts",
+    "before_sha256": "118dfd14ce1bd372e309e4bbec7458556da63a09345da3262982215f9ec410ff",
+    "after_sha256": "548152829b366ce203d1586fff86743201b82bb745927055d9c211843852ad01"
+  },
+  {
+    "file": "src/i18n/language.tsx",
+    "before_sha256": "68a507f6fcda81c38c2a7f7d9b03505fb8a4b00ca9f33189a2dfb0837dc98833",
+    "after_sha256": "2ceb40101b261f06ba4b424838bce0ea36e52f661f4e92a66d248818ed188241"
+  },
+  {
+    "file": "README.md",
+    "before_sha256": "2ed2e95fcad7939a32ab653fcb0faadcd3f0e41bec8d1882547467ff752488fd",
+    "after_sha256": "d05054cf30a691b32e2f2e7c4d5e0b683ee03f8b66474ce907fb44ac3545d9ef"
+  }
+]

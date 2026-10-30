@@ -1,0 +1,13 @@
+{
+  "source": "/Users/mac/Downloads/ahmed-khaled-portfolio 3",
+  "changed_original_files": [
+    "src/components/sections/portfolio-folders.tsx",
+    "src/components/sections/portfolio-folders.css"
+  ],
+  "missing_original_files": [],
+  "unchanged_public_assets": 20,
+  "interaction_checks": 13,
+  "build": "PASS",
+  "component_lint": "PASS",
+  "new_visual_verification": "NOT AVAILABLE"
+}

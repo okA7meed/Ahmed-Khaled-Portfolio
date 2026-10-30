@@ -1,0 +1,25 @@
+{
+  "protectedFilesVerified": 26,
+  "oldPublicAssetsAndAllProjectDataUnchanged": true,
+  "folderGeometryAndInteractionsUnchanged": true,
+  "entranceControllerUnchanged": true,
+  "changedFiles": [
+    "src/styles.css",
+    "src/config/typography.ts",
+    "src/lib/error-page.ts",
+    "src/routes/__root.tsx",
+    "src/components/sections/awards.tsx",
+    "src/components/sections/work.tsx",
+    "src/components/sections/timeline.tsx"
+  ],
+  "newFiles": [
+    "src/typography.css",
+    "public/fonts/thmanyah/thmanyah-900.woff2",
+    "public/fonts/thmanyah/thmanyah-300.woff2",
+    "public/fonts/thmanyah/README.md",
+    "public/fonts/thmanyah/thmanyah-700.woff2",
+    "public/fonts/thmanyah/thmanyah-500.woff2",
+    "public/fonts/thmanyah/thmanyah-400.woff2"
+  ],
+  "removedFiles": []
+}

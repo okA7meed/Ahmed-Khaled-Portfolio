@@ -1,0 +1,57 @@
+[
+  {
+    "file": "README.md",
+    "before_sha256": "d05054cf30a691b32e2f2e7c4d5e0b683ee03f8b66474ce907fb44ac3545d9ef",
+    "after_sha256": "54a1e0c3b03ca9b8690c7e433562c21c653c0c4869c39774a5a77e23e628fa5d"
+  },
+  {
+    "file": "src/styles.css",
+    "before_sha256": "11fecd93128cb779bae3c95d73447ccf5da387599d8afd5f1701c78ed11b577a",
+    "after_sha256": "5a86a7829006c4ee0bd78c09b5af870e55f934a69599d055772873803cdaebf6"
+  },
+  {
+    "file": "src/config/opening.ts",
+    "before_sha256": "de2925051c588946c467f1679da993b2f614654dd9ef8c13d69781dbd566b0b8",
+    "after_sha256": "2000edf59799f8af34b8f1a7f6bd4a89f8debd4d59476219c743468cfca3fc84"
+  },
+  {
+    "file": "src/config/portrait.ts",
+    "before_sha256": "548152829b366ce203d1586fff86743201b82bb745927055d9c211843852ad01",
+    "after_sha256": "9a1440b81b3fdaa241e13a4eb41806fa9571e089794cce370e612b5dbf700bd1"
+  },
+  {
+    "file": "src/components/hero.tsx",
+    "before_sha256": "8a9f86437432d8ba19c3c7c45fc1f8d3210cf4192b33ec6fa12a200174cef2a3",
+    "after_sha256": "0fb1eeefc51ca03ccbb03415ef6b05be490cc931e5ed6bc4d11039dd9834a669"
+  },
+  {
+    "file": "src/components/nav.tsx",
+    "before_sha256": "4dab0c1b61b9c177e407064c82a6d554c5779e847865dc90b52c4a57545c256c",
+    "after_sha256": "d845efff560e7c2af1522aca350c23029f5d77b58dbb09e83a443011b47b0658"
+  },
+  {
+    "file": "src/routes/index.tsx",
+    "before_sha256": "57ce326210bbd870e6acef9cb8331b631776d865884d8c11ef801720a2c0876a",
+    "after_sha256": "8e92448d8538a8cd8889f0fb26885f84b556ac6d59a562b2af1bc67181087cd7"
+  },
+  {
+    "file": "src/components/sections/projects.tsx",
+    "before_sha256": "a765634b664e4a41c2030dd3a94ffcf8a22f6a9979e614520e28d7faa525466d",
+    "after_sha256": "a61c5f7eefb7e2716dd27b3f5afbce22c088417d39818e58775440f2cc15135a"
+  },
+  {
+    "file": "src/components/sections/awards.tsx",
+    "before_sha256": "122930fc3b0bfa84864819f31853264030c14acf979307219439511948f7b11e",
+    "after_sha256": "deb5216b94d824f96d4507a5dce8e9d7a9b6c68dc40b6285701442ef50572696"
+  },
+  {
+    "file": "src/components/sections/portfolio-folders.tsx",
+    "before_sha256": "66cb3cb2800db83de30ea51836b3f639ded6b10956e444fa300d5860614dc0a1",
+    "after_sha256": "86030bf683091d9eed62d021b1da58d7ff09865e5c02e9f67b9133fb24f8d3ce"
+  },
+  {
+    "file": "src/components/sections/stack-logos.tsx",
+    "before_sha256": "c68f2c8d07561deac7a11fe096e57e6ddf46cf9f5c6fe9666cef65bbd78c9206",
+    "after_sha256": "43c4a467e860b1198983891c9f6e886319eed205aae3a55c0419b9dc66c28af0"
+  }
+]

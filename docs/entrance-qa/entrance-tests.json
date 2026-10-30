@@ -1,0 +1,61 @@
+{
+  "environment": "jsdom with simulated viewport/media events; does not render CSS or measure visual smoothness",
+  "results": [
+    {
+      "name": "Offscreen groups wait for viewport entry, then all three folders overlap",
+      "result": "PASS"
+    },
+    {
+      "name": "Completion releases animation state and scrolling back does not replay completed items",
+      "result": "PASS"
+    },
+    {
+      "name": "Keyboard focus immediately reveals the whole pending folder group",
+      "result": "PASS"
+    },
+    {
+      "name": "A pointer press during entry reveals content and keeps normal activation available",
+      "result": "PASS"
+    },
+    {
+      "name": "Reduced motion starts with all content visible and no pending observed groups",
+      "result": "PASS"
+    },
+    {
+      "name": "Enabling reduced motion halfway through entry releases all pending content",
+      "result": "PASS"
+    },
+    {
+      "name": "Missing IntersectionObserver keeps the original static DOM fully available",
+      "result": "PASS"
+    },
+    {
+      "name": "Slow hydration never hides content again after the first-paint fallback has expired",
+      "result": "PASS"
+    },
+    {
+      "name": "The actual head bootstrap has a bounded fallback and does not undo successful hydration",
+      "result": "PASS"
+    },
+    {
+      "name": "On mobile each folder is independent; later cards stay pending below the viewport",
+      "result": "PASS"
+    },
+    {
+      "name": "A breakpoint change regroups unrevealed cards for the new layout",
+      "result": "PASS"
+    },
+    {
+      "name": "New tab/panel content joins viewport observation after its React mount",
+      "result": "PASS"
+    },
+    {
+      "name": "A backgrounded page releases entries so resumed content cannot remain invisible",
+      "result": "PASS"
+    },
+    {
+      "name": "Disposing the controller removes observations and releases pending elements",
+      "result": "PASS"
+    }
+  ]
+}

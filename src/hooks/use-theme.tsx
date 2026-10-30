@@ -3,11 +3,14 @@ import {
   useCallback,
   useContext,
   useEffect,
+  useLayoutEffect,
   useMemo,
+  useRef,
   useState,
   type ReactNode,
 } from "react";
-import { THEMES, THEME_STORAGE_KEY, DEFAULT_THEME, type ThemeName } from "@/config";
+import { DEFAULT_THEME, THEME_STORAGE_KEY, type ThemeName } from "@/config/theme";
+import { applyTheme, isTheme, readTheme } from "@/lib/theme";
 
 type ThemeContextValue = {
   theme: ThemeName;
@@ -18,51 +21,43 @@ type ThemeContextValue = {
 
 const ThemeContext = createContext<ThemeContextValue | null>(null);
 
-function getInitialTheme(): ThemeName {
-  if (typeof window === "undefined") return DEFAULT_THEME;
-  try {
-    const stored = window.localStorage.getItem(THEME_STORAGE_KEY);
-    if (stored === "dark" || stored === "light") return stored;
-  } catch {
-    /* ignore */
-  }
-  return DEFAULT_THEME;
-}
-
-function applyTheme(theme: ThemeName) {
-  const root = document.documentElement;
-  const vars = THEMES[theme];
-  root.setAttribute("data-theme", theme);
-  root.classList.toggle("dark", theme === "dark");
-  for (const [key, value] of Object.entries(vars)) {
-    root.style.setProperty(key, value);
-  }
-}
-
 export function ThemeProvider({ children }: { children: ReactNode }) {
+  // Match SSR first; the head script has already applied the saved appearance.
   const [theme, setThemeState] = useState<ThemeName>(DEFAULT_THEME);
+  const current = useRef<ThemeName>(DEFAULT_THEME);
 
-  // Restore saved theme on mount (no page reload)
-  useEffect(() => {
-    setThemeState(getInitialTheme());
+  useLayoutEffect(() => {
+    const initial = readTheme();
+    current.current = initial;
+    applyTheme(initial);
+    setThemeState(initial);
   }, []);
 
-  // Apply theme whenever it changes
-  useEffect(() => {
-    applyTheme(theme);
-    try {
-      window.localStorage.setItem(THEME_STORAGE_KEY, theme);
-    } catch {
-      /* ignore */
-    }
-  }, [theme]);
-
   const setTheme = useCallback((next: ThemeName) => {
+    current.current = next;
+    applyTheme(next);
     setThemeState(next);
+    try {
+      window.localStorage.setItem(THEME_STORAGE_KEY, next);
+    } catch {
+      // The switch still works for this page when persistence is blocked.
+    }
   }, []);
 
   const toggleTheme = useCallback(() => {
-    setThemeState((prev) => (prev === "dark" ? "light" : "dark"));
+    setTheme(current.current === "dark" ? "light" : "dark");
+  }, [setTheme]);
+
+  useEffect(() => {
+    const sync = (event: StorageEvent) => {
+      if (event.key !== THEME_STORAGE_KEY && event.key !== null) return;
+      const next = isTheme(event.newValue) ? event.newValue : DEFAULT_THEME;
+      current.current = next;
+      applyTheme(next);
+      setThemeState(next);
+    };
+    window.addEventListener("storage", sync);
+    return () => window.removeEventListener("storage", sync);
   }, []);
 
   const value = useMemo<ThemeContextValue>(
@@ -74,12 +69,7 @@ export function ThemeProvider({ children }: { children: ReactNode }) {
 }
 
 export function useTheme() {
-  const ctx = useContext(ThemeContext);
-  if (!ctx) throw new Error("useTheme must be used within a ThemeProvider");
-  return ctx;
-}
-
-// Apply the theme before hydration to avoid a flash of the wrong theme.
-export function initThemeScript() {
-  return `(function(){try{var t=localStorage.getItem("${THEME_STORAGE_KEY}");var theme=(t==="light"||t==="dark")?t:"${DEFAULT_THEME}";var r=document.documentElement;r.setAttribute("data-theme",theme);r.classList.toggle("dark",theme==="dark");var v=${JSON.stringify(THEMES)}[theme];for(var k in v){r.style.setProperty(k,v[k]);}}catch(e){}})();`;
+  const context = useContext(ThemeContext);
+  if (!context) throw new Error("useTheme must be used within a ThemeProvider");
+  return context;
 }

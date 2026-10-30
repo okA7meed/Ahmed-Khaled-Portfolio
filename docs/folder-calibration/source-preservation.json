@@ -1,0 +1,9 @@
+{
+  "source": "/Users/mac/Downloads/ahmed-khaled-portfolio 3",
+  "changed": [
+    "src/components/sections/portfolio-folders.tsx",
+    "src/components/sections/portfolio-folders.css"
+  ],
+  "missing": [],
+  "scope": "all original files except installed/generated output"
+}

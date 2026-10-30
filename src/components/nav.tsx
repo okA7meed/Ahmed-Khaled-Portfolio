@@ -1,266 +1,207 @@
-import { useCallback, useEffect, useRef, useState } from "react";
-import { AnimatePresence, motion } from "motion/react";
-import { Menu, Moon, Sun, X } from "lucide-react";
-import { nav, profile } from "@/data/site";
-import { NAVBAR } from "@/config";
+import { useCallback, useEffect, useState } from "react";
+import { AnimatePresence, motion, useReducedMotion } from "motion/react";
+import { ArrowUpLeft, Languages, Menu, Moon, Sun, X } from "lucide-react";
+import { useLanguage } from "@/i18n/language";
 import { useTheme } from "@/hooks/use-theme";
+import { OPENING } from "@/config/opening";
 
-/**
- * ── NAVBAR ────────────────────────────────────────────────────
- * All visual dimensions come from `@/config/navbar.ts` (NAVBAR).
- * Colors come from the active theme via CSS variables. To restyle
- * the navbar, edit src/config/navbar.ts only.
- */
-const pillStyle: React.CSSProperties = {
-  width: NAVBAR.widthMobile,
-  height: NAVBAR.heightMobile,
-  maxWidth: NAVBAR.maxWidth,
-  borderRadius: NAVBAR.borderRadius,
-  paddingInline: NAVBAR.horizontalPadding,
-  paddingBlock: NAVBAR.verticalPadding,
-  background: NAVBAR.backgroundCss,
-  backdropFilter: `blur(${NAVBAR.blur})`,
-  WebkitBackdropFilter: `blur(${NAVBAR.blur})`,
-  border: `${NAVBAR.borderWidth} solid ${NAVBAR.borderColorCss}`,
-  boxShadow: NAVBAR.shadowCss,
-};
-
-type LenisLike = { scrollTo: (target: HTMLElement | number, opts?: { offset?: number }) => void };
-
-function scrollToId(id: string) {
-  const el = document.getElementById(id);
-  if (!el) return;
-  const lenis = (window as unknown as { __lenis?: LenisLike }).__lenis;
-  if (lenis) lenis.scrollTo(el, { offset: -112 });
-  else el.scrollIntoView({ behavior: "smooth", block: "start" });
-  history.replaceState(null, "", `#${id}`);
-}
+const ids = [
+  "projects",
+  "about",
+  "services",
+  "stack",
+  "timeline",
+  "awards",
+  "work",
+  "contact",
+] as const;
+type NavId = (typeof ids)[number];
 
 export function Nav() {
+  const { language, setLanguage, t } = useLanguage();
   const { isDark, toggleTheme } = useTheme();
-  const [scrolled, setScrolled] = useState(false);
-  const [hidden, setHidden] = useState(false);
+  const languageLabel = language === "ar" ? "التبديل إلى الإنجليزية" : "Switch to Arabic";
+  const themeLabel =
+    language === "ar"
+      ? isDark
+        ? "تفعيل الوضع الفاتح"
+        : "تفعيل الوضع الداكن"
+      : isDark
+        ? "Switch to light theme"
+        : "Switch to dark theme";
+  const reduce = useReducedMotion();
+  const [active, setActive] = useState<NavId>("projects");
   const [open, setOpen] = useState(false);
-  const [active, setActive] = useState("about");
-  const lastY = useRef(0);
+  const navItems = ids.map((id) => ({ id, label: t.nav[id] }));
 
   useEffect(() => {
-    const onScroll = () => {
-      const y = window.scrollY;
-      setScrolled(y > 24);
-      setHidden(y > 240 && y > lastY.current);
-      lastY.current = y;
-    };
-    onScroll();
-    window.addEventListener("scroll", onScroll, { passive: true });
-    return () => window.removeEventListener("scroll", onScroll);
-  }, []);
-
-  useEffect(() => {
-    const obs = new IntersectionObserver(
+    const targets = ids
+      .map((id) => document.getElementById(id))
+      .filter((node): node is HTMLElement => Boolean(node));
+    if (!targets.length || !("IntersectionObserver" in window)) return;
+    const observer = new IntersectionObserver(
       (entries) => {
-        entries.forEach((e) => {
-          if (e.isIntersecting) setActive(e.target.id);
-        });
+        const visible = entries
+          .filter((entry) => entry.isIntersecting)
+          .sort((a, b) => b.intersectionRatio - a.intersectionRatio)[0];
+        if (visible) setActive(visible.target.id as NavId);
       },
-      { rootMargin: "-45% 0px -50% 0px" },
+      { rootMargin: "-32% 0px -56% 0px", threshold: [0, 0.15, 0.35, 0.6] },
     );
-    nav.forEach((n) => {
-      const el = document.getElementById(n.id);
-      if (el) obs.observe(el);
-    });
-    return () => obs.disconnect();
+    targets.forEach((target) => observer.observe(target));
+    return () => observer.disconnect();
   }, []);
 
-  const go = useCallback((e: React.MouseEvent, id: string) => {
-    e.preventDefault();
+  const goTo = useCallback((event: React.MouseEvent<HTMLAnchorElement>, id: string) => {
+    event.preventDefault();
     setOpen(false);
-    scrollToId(id);
+    document.getElementById(id)?.scrollIntoView({
+      behavior: window.matchMedia("(prefers-reduced-motion: reduce)").matches ? "auto" : "smooth",
+      block: "start",
+    });
+    history.replaceState(null, "", `#${id}`);
   }, []);
 
   return (
-    <motion.header
-      initial={{ y: -60, opacity: 0 }}
-      animate={{ y: hidden ? -120 : 0, opacity: 1 }}
-      transition={{ duration: 0.55, ease: [0.22, 1, 0.36, 1] }}
-      className="fixed inset-x-0 z-50 flex flex-col items-center px-3 sm:px-4"
-      style={{ top: NAVBAR.top }}
-    >
+    <header className="site-nav" dir="rtl" data-entrance-group="opening">
       <div
-        className={`flex items-center justify-between ${scrolled ? "nav-pill-scrolled" : ""}`}
-        style={{
-          ...pillStyle,
-          width: NAVBAR.widthMobile,
-          ["@media (min-width: 640px)" as string]: {
-            width: NAVBAR.widthTablet,
-            height: NAVBAR.heightTablet,
-          },
-          ["@media (min-width: 1024px)" as string]: {
-            width: NAVBAR.widthDesktop,
-            height: NAVBAR.heightDesktop,
-          },
-        }}
+        className="site-nav__bar"
+        data-entrance
+        data-entrance-delay={OPENING.frame}
+        data-entrance-distance="-110"
+        data-entrance-duration="0.48"
       >
         <a
+          className="site-nav__brand"
+          data-entrance
+          data-entrance-delay={OPENING.brand}
+          data-entrance-duration="0.24"
+          data-entrance-distance="-6"
           href="#top"
-          onClick={(e) => go(e, "top")}
-          className="flex shrink-0 items-center whitespace-nowrap font-mono focus-visible:ring-2 focus-visible:ring-lime focus-visible:outline-none"
-          style={{
-            width: NAVBAR.logoAreaWidth,
-            fontSize: NAVBAR.logoFontSize,
-            fontWeight: NAVBAR.logoFontWeight,
-            lineHeight: NAVBAR.heightDesktop,
-          }}
-          aria-label="Back to top"
+          onClick={(event) => goTo(event, "top")}
+          aria-label={
+            language === "ar" ? "أحمد خالد — العودة إلى البداية" : "Ahmed Khaled — back to top"
+          }
         >
-          <span style={{ color: NAVBAR.logoColorNameCss }}>Ahmed Khaled</span>
+          <img
+            draggable={false}
+            className="site-nav__logo site-nav__logo--dark"
+            src="/images/logos/logo-ak.png"
+            alt=""
+            width={56}
+            height={28}
+            fetchPriority="high"
+            decoding="async"
+          />
+          <img
+            draggable={false}
+            className="site-nav__logo site-nav__logo--light"
+            src="/images/logos/logo-ak-Dark.png"
+            alt=""
+            width={56}
+            height={28}
+            decoding="async"
+          />
         </a>
-
-        <nav
-          className="hidden flex-1 items-center justify-center lg:flex"
-          aria-label="Primary"
-          style={{ gap: NAVBAR.navGap }}
-        >
-          {nav.map((n) => {
-            const isActive = active === n.id;
-            return (
-              <a
-                key={n.id}
-                href={`#${n.id}`}
-                onClick={(e) => go(e, n.id)}
-                aria-current={isActive ? "true" : undefined}
-                className="relative whitespace-nowrap font-mono uppercase transition-colors focus-visible:ring-2 focus-visible:ring-lime focus-visible:outline-none"
-                style={{
-                  fontSize: NAVBAR.navFontSize,
-                  fontWeight: NAVBAR.navFontWeight,
-                  letterSpacing: NAVBAR.navLetterSpacing,
-                  color: isActive ? NAVBAR.navColorActiveCss : NAVBAR.navColorCss,
-                }}
-                onMouseEnter={(e) => {
-                  if (!isActive) e.currentTarget.style.color = NAVBAR.navColorHoverCss;
-                }}
-                onMouseLeave={(e) => {
-                  if (!isActive) e.currentTarget.style.color = NAVBAR.navColorCss;
-                }}
-              >
-                {n.label}
-                {isActive && (
-                  <motion.span
-                    layoutId="nav-active"
-                    transition={{ type: "spring", stiffness: 380, damping: 32 }}
-                    className="absolute inset-x-0 -bottom-1 h-px bg-lime"
-                  />
-                )}
-              </a>
-            );
-          })}
+        <nav className="site-nav__links" aria-label={t.nav.primary}>
+          {navItems.map(({ id, label }, index) => (
+            <a
+              key={id}
+              data-entrance
+              data-entrance-delay={OPENING.links + index * OPENING.linkStep}
+              data-entrance-duration="0.26"
+              data-entrance-distance="-8"
+              href={`#${id}`}
+              onClick={(event) => goTo(event, id)}
+              aria-current={active === id ? "location" : undefined}
+              className={active === id ? "is-active" : ""}
+            >
+              {label}
+            </a>
+          ))}
         </nav>
-
-        <div className="flex shrink-0 items-center" style={{ gap: NAVBAR.rightGap }}>
+        <div className="site-nav__actions">
           <button
+            className="language-toggle"
+            data-entrance
+            data-entrance-delay={OPENING.language}
+            data-entrance-duration="0.23"
+            data-entrance-distance="-6"
             type="button"
-            aria-label="Toggle theme"
-            onClick={toggleTheme}
-            className="grid place-items-center rounded-full transition-[transform,color,background-color,border-color] duration-300 ease-out hover:scale-105 focus-visible:ring-2 focus-visible:ring-lime focus-visible:outline-none"
-            style={{
-              width: NAVBAR.toggleSize,
-              height: NAVBAR.toggleSize,
-              background: NAVBAR.toggleBackgroundCss,
-              border: `${NAVBAR.borderWidth} solid ${NAVBAR.toggleBorderColorCss}`,
-            }}
+            onClick={() => setLanguage(language === "ar" ? "en" : "ar")}
+            aria-label={languageLabel}
+            title={languageLabel}
           >
-{isDark ? (
-              <Sun
-                style={{ width: NAVBAR.toggleIconSize, height: NAVBAR.toggleIconSize, color: NAVBAR.iconColorCss }}
-                className="hover:text-lime"
-              />
-            ) : (
-              <Moon
-                style={{ width: NAVBAR.toggleIconSize, height: NAVBAR.toggleIconSize, color: NAVBAR.iconColorCss }}
-                className="hover:text-lime"
-              />
-            )}
+            <Languages size={18} aria-hidden="true" />
+          </button>
+          <button
+            className="theme-toggle"
+            data-entrance
+            data-entrance-delay={OPENING.theme}
+            data-entrance-duration="0.23"
+            data-entrance-distance="-6"
+            type="button"
+            onClick={toggleTheme}
+            aria-label={themeLabel}
+            title={themeLabel}
+          >
+            <Sun className="theme-toggle__sun" size={18} aria-hidden="true" />
+            <Moon className="theme-toggle__moon" size={18} aria-hidden="true" />
           </button>
           <a
+            className="site-nav__cta"
+            dir={language === "ar" ? "rtl" : "ltr"}
+            data-entrance
+            data-entrance-delay={OPENING.project}
+            data-entrance-duration="0.26"
+            data-entrance-distance="-6"
             href="#contact"
-            onClick={(e) => go(e, "contact")}
-            className="hidden items-center rounded-full border border-lime font-mono uppercase transition-all hover:bg-transparent hover:text-lime focus-visible:ring-2 focus-visible:ring-lime focus-visible:outline-none sm:flex"
-            style={{
-              height: NAVBAR.buttonHeight,
-              paddingInline: NAVBAR.buttonHorizontalPadding,
-              fontSize: NAVBAR.buttonFontSize,
-              fontWeight: NAVBAR.buttonFontWeight,
-              background: "var(--lime)",
-              color: "var(--primary-foreground)",
-            }}
+            onClick={(event) => goTo(event, "contact")}
           >
-            Hire me
+            {t.nav.hire}
+            <ArrowUpLeft size={14} aria-hidden="true" />
           </a>
           <button
+            className="site-nav__menu"
+            data-entrance
+            data-entrance-delay={OPENING.menu}
+            data-entrance-duration="0.23"
+            data-entrance-distance="-6"
             type="button"
-            aria-label={open ? "Close menu" : "Open menu"}
+            aria-label={open ? t.nav.closeMenu : t.nav.openMenu}
             aria-expanded={open}
-            onClick={() => setOpen((v) => !v)}
-            className="grid shrink-0 place-items-center rounded-full transition-[transform,background-color,border-color] duration-300 ease-out hover:scale-105 focus-visible:ring-2 focus-visible:ring-lime focus-visible:outline-none lg:hidden"
-            style={{
-              width: NAVBAR.hamburgerSize,
-              height: NAVBAR.hamburgerSize,
-              background: NAVBAR.hamburgerBackgroundCss,
-              border: `${NAVBAR.borderWidth} solid ${NAVBAR.hamburgerBorderColorCss}`,
-            }}
+            aria-controls="mobile-navigation"
+            onClick={() => setOpen((value) => !value)}
           >
-{open ? (
-              <X
-                style={{ width: NAVBAR.hamburgerIconSize, height: NAVBAR.hamburgerIconSize, color: NAVBAR.iconColorCss }}
-              />
-            ) : (
-              <Menu
-                style={{ width: NAVBAR.hamburgerIconSize, height: NAVBAR.hamburgerIconSize, color: NAVBAR.iconColorCss }}
-              />
-            )}
+            {open ? <X size={19} aria-hidden="true" /> : <Menu size={19} aria-hidden="true" />}
           </button>
         </div>
       </div>
-
       <AnimatePresence>
-        {open && (
+        {open ? (
           <motion.nav
-            initial={{ opacity: 0, y: -12 }}
+            className="site-nav__mobile"
+            id="mobile-navigation"
+            aria-label={t.nav.mobile}
+            initial={reduce ? false : { opacity: 0, y: -8 }}
             animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0, y: -12 }}
-            transition={{ duration: 0.32, ease: [0.22, 1, 0.36, 1] }}
-            aria-label="Mobile"
-            className="nav-dropdown mt-3 rounded-3xl lg:hidden"
-            style={{
-              width: NAVBAR.widthMobile,
-              maxWidth: NAVBAR.maxWidth,
-            }}
+            exit={reduce ? {} : { opacity: 0, y: -8 }}
+            transition={{ duration: reduce ? 0 : 0.22, ease: "easeOut" }}
           >
-            <div className="grid gap-1 px-2 py-3">
-              {nav.map((n) => (
-                <a
-                  key={n.id}
-                  href={`#${n.id}`}
-                  onClick={(e) => go(e, n.id)}
-                  aria-current={active === n.id ? "true" : undefined}
-className="nav-mobile-link flex items-baseline gap-3 rounded-xl px-3 py-3 font-mono text-xs tracking-[0.2em] uppercase"
-                >
-                  <span className="text-lime opacity-70">{n.index}</span>
-                  {n.label}
-                </a>
-              ))}
-            </div>
-            <div className="px-2 pb-3">
+            {navItems.map(({ id, label }, index) => (
               <a
-                href={`mailto:${profile.email}`}
-                className="block rounded-full bg-lime px-4 py-3 text-center font-mono text-[0.7rem] tracking-[0.2em] text-primary-foreground uppercase transition-transform hover:scale-[1.02]"
+                key={id}
+                href={`#${id}`}
+                onClick={(event) => goTo(event, id)}
+                aria-current={active === id ? "location" : undefined}
               >
-                {profile.email}
+                <span className="site-nav__mobile-index">0{index + 1}</span>
+                {label}
               </a>
-            </div>
+            ))}
           </motion.nav>
-        )}
+        ) : null}
       </AnimatePresence>
-    </motion.header>
+    </header>
   );
 }

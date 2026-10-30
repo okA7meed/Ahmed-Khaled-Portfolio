@@ -1,0 +1,21 @@
+/** One clock for the navbar and hero, in seconds from first hydration. */
+export const OPENING = {
+  frame: 0,
+  brand: 0.7,
+  links: 1.04,
+  linkStep: 0.075,
+  theme: 1.96,
+  language: 2.08,
+  menu: 2.08,
+  project: 2.42,
+  availability: 2.84,
+  title: 3.28,
+  role: 3.82,
+  description: 4.22,
+  primary: 4.66,
+  secondary: 4.84,
+  cv: 5.02,
+  socials: 5.1,
+  portrait: 5.46,
+  signature: 6.18,
+} as const;

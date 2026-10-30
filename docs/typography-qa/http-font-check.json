@@ -1,0 +1,36 @@
+{
+  "status": 200,
+  "preloadedFonts": [
+    "/fonts/thmanyah/thmanyah-400.woff2",
+    "/fonts/thmanyah/thmanyah-700.woff2"
+  ],
+  "missingPageGlyphs": [],
+  "fontRequests": [
+    {
+      "url": "/fonts/thmanyah/thmanyah-300.woff2",
+      "status": 200,
+      "bytes": 75700
+    },
+    {
+      "url": "/fonts/thmanyah/thmanyah-400.woff2",
+      "status": 200,
+      "bytes": 81352
+    },
+    {
+      "url": "/fonts/thmanyah/thmanyah-500.woff2",
+      "status": 200,
+      "bytes": 83072
+    },
+    {
+      "url": "/fonts/thmanyah/thmanyah-700.woff2",
+      "status": 200,
+      "bytes": 82516
+    },
+    {
+      "url": "/fonts/thmanyah/thmanyah-900.woff2",
+      "status": 200,
+      "bytes": 79124
+    }
+  ],
+  "allRenderedPageCharactersCovered": true
+}

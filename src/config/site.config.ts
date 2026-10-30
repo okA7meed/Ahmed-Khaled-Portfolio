@@ -102,4 +102,3 @@ export const siteConfig = {
     paddingYDesktop: SPACING.footerPaddingYDesktop,
   },
 } as const;
-

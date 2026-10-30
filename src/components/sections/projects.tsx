@@ -65,8 +65,12 @@ export function Projects() {
               />
 
               {/* project image — 16:9 */}
-              <div className="relative z-10 overflow-hidden rounded-2xl" style={{ borderRadius: RADIUS.lg }}>
+              <div
+                className="relative z-10 overflow-hidden rounded-2xl"
+                style={{ borderRadius: RADIUS.lg }}
+              >
                 <motion.img
+                  draggable={false}
                   src={p.image}
                   alt={p.title}
                   loading="lazy"
@@ -80,7 +84,11 @@ export function Projects() {
                   whileHover="hover"
                   transition={{ duration: 0.5, ease: [0.16, 1, 0.3, 1] }}
                 />
-                <span className="absolute inset-0 rounded-2xl ring-1 ring-inset ring-white/5" style={{ borderRadius: RADIUS.lg }} aria-hidden />
+                <span
+                  className="absolute inset-0 rounded-2xl ring-1 ring-inset ring-white/5"
+                  style={{ borderRadius: RADIUS.lg }}
+                  aria-hidden
+                />
               </div>
 
               {/* content */}
@@ -123,4 +131,3 @@ export function Projects() {
     </Section>
   );
 }
-

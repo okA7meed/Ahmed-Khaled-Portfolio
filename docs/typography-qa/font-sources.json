@@ -1,0 +1,32 @@
+[
+  {
+    "weight": 300,
+    "source": "https://framerusercontent.com/assets/zmxf3YlIwMxBTz61cviQtq5n3zU.woff2",
+    "file": "public/fonts/thmanyah/thmanyah-300.woff2",
+    "bytes": 75700
+  },
+  {
+    "weight": 400,
+    "source": "https://framerusercontent.com/assets/s1q2LvVNWBbqzMxMBxsexY73tE.woff2",
+    "file": "public/fonts/thmanyah/thmanyah-400.woff2",
+    "bytes": 81352
+  },
+  {
+    "weight": 500,
+    "source": "https://framerusercontent.com/assets/ahIxG21c1088n0jA0bPQBjKu6M.woff2",
+    "file": "public/fonts/thmanyah/thmanyah-500.woff2",
+    "bytes": 83072
+  },
+  {
+    "weight": 700,
+    "source": "https://framerusercontent.com/assets/AAY5hsAWwWmVC7qlScZUGjzCgE8.woff2",
+    "file": "public/fonts/thmanyah/thmanyah-700.woff2",
+    "bytes": 82516
+  },
+  {
+    "weight": 900,
+    "source": "https://framerusercontent.com/assets/a9r2dKNoQcqFiTkwxTUnXgAfjws.woff2",
+    "file": "public/fonts/thmanyah/thmanyah-900.woff2",
+    "bytes": 79124
+  }
+]

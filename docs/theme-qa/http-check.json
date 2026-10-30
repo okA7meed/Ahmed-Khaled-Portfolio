@@ -1,0 +1,24 @@
+{
+  "status": 200,
+  "root": {
+    "lang": "ar",
+    "dir": "rtl",
+    "data-theme": "dark",
+    "class": "dark",
+    "data-tsd-source": "/src/routes/__root.tsx:103:5"
+  },
+  "buttons": {
+    "language-toggle": {
+      "label": "التبديل إلى الإنجليزية",
+      "type": "button",
+      "text": ""
+    },
+    "theme-toggle": {
+      "label": "تفعيل الوضع الفاتح",
+      "type": "button",
+      "text": ""
+    }
+  },
+  "earlyThemeBootstrap": true,
+  "heroName": "أحمــد خالــد"
+}

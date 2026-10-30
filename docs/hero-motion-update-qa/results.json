@@ -1,0 +1,633 @@
+{
+  "passed": 25,
+  "total": 25,
+  "results": [
+    {
+      "name": "Navbar frame enters in about 0.48 seconds",
+      "pass": true,
+      "milliseconds": 466.09999999403954
+    },
+    {
+      "name": "Brand waits for settled frame",
+      "pass": true
+    },
+    {
+      "name": "Navbar contents finish about 20% faster",
+      "pass": true,
+      "milliseconds": 2216.5999999940395,
+      "previous": 2740
+    },
+    {
+      "name": "Hero follows completed navbar",
+      "pass": true
+    },
+    {
+      "name": "New portrait asset loads",
+      "pass": true
+    },
+    {
+      "name": "Circular crop remains",
+      "pass": true
+    },
+    {
+      "name": "Both planets continuously orbit",
+      "pass": true,
+      "before": [
+        {
+          "transform": "matrix(0.896877, 0.442279, -0.442279, 0.896877, 0, 0)",
+          "state": "running",
+          "duration": "32s"
+        },
+        {
+          "transform": "matrix(0.945003, -0.327061, 0.327061, 0.945003, 0, 0)",
+          "state": "running",
+          "duration": "44s"
+        }
+      ],
+      "after": [
+        {
+          "transform": "matrix(0.690744, 0.723099, -0.723099, 0.690744, 0, 0)",
+          "state": "running",
+          "duration": "32s"
+        },
+        {
+          "transform": "matrix(0.832141, -0.554564, 0.554564, 0.832141, 0, 0)",
+          "state": "running",
+          "duration": "44s"
+        }
+      ]
+    },
+    {
+      "name": "Portrait and signature remain still while planets move",
+      "pass": true
+    },
+    {
+      "name": "Ring glow changes gently",
+      "pass": true,
+      "before": "0.976918",
+      "after": "0.752655"
+    },
+    {
+      "name": "Right-click save menu blocked on every image",
+      "pass": true,
+      "count": 15
+    },
+    {
+      "name": "Dragging disabled on every image",
+      "pass": true
+    },
+    {
+      "name": "Normal text retains context menu",
+      "pass": true
+    },
+    {
+      "name": "Normal portrait left click remains allowed",
+      "pass": true
+    },
+    {
+      "name": "Resume PDF download still works",
+      "pass": true
+    },
+    {
+      "name": "Reduced motion stops all decorative animations",
+      "pass": true
+    },
+    {
+      "name": "Certificate image still opens on ordinary click",
+      "pass": true
+    },
+    {
+      "name": "Newly opened preview images are also protected",
+      "pass": true
+    },
+    {
+      "name": "Certificate preview still closes with Escape",
+      "pass": true
+    },
+    {
+      "name": "English remains available",
+      "pass": true
+    },
+    {
+      "name": "Light theme still works",
+      "pass": true
+    },
+    {
+      "name": "Updated layout has no horizontal overflow",
+      "pass": true,
+      "responsive": [
+        {
+          "width": 320,
+          "page": 320,
+          "title": 284,
+          "available": 284
+        },
+        {
+          "width": 390,
+          "page": 390,
+          "title": 342,
+          "available": 342
+        },
+        {
+          "width": 768,
+          "page": 768,
+          "title": 371,
+          "available": 371
+        },
+        {
+          "width": 1024,
+          "page": 1024,
+          "title": 512,
+          "available": 512
+        },
+        {
+          "width": 1440,
+          "page": 1440,
+          "title": 643,
+          "available": 643
+        }
+      ]
+    },
+    {
+      "name": "Mobile menu remains functional",
+      "pass": true
+    },
+    {
+      "name": "Continuous orbit also runs on mobile",
+      "pass": true
+    },
+    {
+      "name": "Reduced motion from first load stays static and visible",
+      "pass": true
+    },
+    {
+      "name": "No browser runtime errors",
+      "pass": true,
+      "errors": []
+    }
+  ],
+  "trace": [
+    {
+      "kind": "animationstart",
+      "class": "site-nav__bar",
+      "time": 853.2999999970198
+    },
+    {
+      "kind": "animationend",
+      "class": "site-nav__bar",
+      "time": 1319.3999999910593
+    },
+    {
+      "kind": "settled",
+      "class": "site-nav__bar",
+      "time": 1319.699999988079
+    },
+    {
+      "kind": "animationstart",
+      "class": "site-nav__brand",
+      "time": 1403.199999988079
+    },
+    {
+      "kind": "animationend",
+      "class": "site-nav__brand",
+      "time": 1652.8999999910593
+    },
+    {
+      "kind": "settled",
+      "class": "site-nav__brand",
+      "time": 1653.199999988079
+    },
+    {
+      "kind": "animationstart",
+      "class": "is-active",
+      "time": 1685.3999999910593
+    },
+    {
+      "kind": "animationstart",
+      "class": "",
+      "time": 1752.699999988079
+    },
+    {
+      "kind": "animationstart",
+      "class": "",
+      "time": 1802.2999999970198
+    },
+    {
+      "kind": "animationstart",
+      "class": "",
+      "time": 1868.7999999970198
+    },
+    {
+      "kind": "animationstart",
+      "class": "",
+      "time": 1919.2999999970198
+    },
+    {
+      "kind": "animationend",
+      "class": "is-active",
+      "time": 1952.3999999910593
+    },
+    {
+      "kind": "settled",
+      "class": "is-active",
+      "time": 1952.5
+    },
+    {
+      "kind": "animationstart",
+      "class": "",
+      "time": 1986
+    },
+    {
+      "kind": "animationend",
+      "class": "",
+      "time": 2002.0999999940395
+    },
+    {
+      "kind": "settled",
+      "class": "",
+      "time": 2002.199999988079
+    },
+    {
+      "kind": "animationstart",
+      "class": "",
+      "time": 2052.7999999970198
+    },
+    {
+      "kind": "animationend",
+      "class": "",
+      "time": 2068.7999999970198
+    },
+    {
+      "kind": "settled",
+      "class": "",
+      "time": 2068.8999999910593
+    },
+    {
+      "kind": "animationstart",
+      "class": "",
+      "time": 2105.0999999940395
+    },
+    {
+      "kind": "animationend",
+      "class": "",
+      "time": 2119.5999999940395
+    },
+    {
+      "kind": "settled",
+      "class": "",
+      "time": 2119.699999988079
+    },
+    {
+      "kind": "animationend",
+      "class": "",
+      "time": 2186.2999999970198
+    },
+    {
+      "kind": "settled",
+      "class": "",
+      "time": 2186.3999999910593
+    },
+    {
+      "kind": "animationend",
+      "class": "",
+      "time": 2252.5
+    },
+    {
+      "kind": "settled",
+      "class": "",
+      "time": 2252.5999999940395
+    },
+    {
+      "kind": "animationend",
+      "class": "",
+      "time": 2302.7999999970198
+    },
+    {
+      "kind": "settled",
+      "class": "",
+      "time": 2303
+    },
+    {
+      "kind": "animationend",
+      "class": "",
+      "time": 2369.7999999970198
+    },
+    {
+      "kind": "settled",
+      "class": "",
+      "time": 2370
+    },
+    {
+      "kind": "animationstart",
+      "class": "theme-toggle",
+      "time": 2419.699999988079
+    },
+    {
+      "kind": "animationstart",
+      "class": "language-toggle",
+      "time": 2519.2999999970198
+    },
+    {
+      "kind": "animationend",
+      "class": "theme-toggle",
+      "time": 2652.7999999970198
+    },
+    {
+      "kind": "settled",
+      "class": "theme-toggle",
+      "time": 2652.8999999910593
+    },
+    {
+      "kind": "animationend",
+      "class": "language-toggle",
+      "time": 2752.3999999910593
+    },
+    {
+      "kind": "settled",
+      "class": "language-toggle",
+      "time": 2752.5
+    },
+    {
+      "kind": "animationstart",
+      "class": "site-nav__cta",
+      "time": 2802.199999988079
+    },
+    {
+      "kind": "settled",
+      "class": "site-nav__menu",
+      "time": 2806.199999988079
+    },
+    {
+      "kind": "animationend",
+      "class": "site-nav__cta",
+      "time": 3069.699999988079
+    },
+    {
+      "kind": "settled",
+      "class": "site-nav__cta",
+      "time": 3069.8999999910593
+    },
+    {
+      "kind": "animationstart",
+      "class": "hero__eyebrow",
+      "time": 3168.8999999910593
+    },
+    {
+      "kind": "animationend",
+      "class": "hero__eyebrow",
+      "time": 3568.7999999970198
+    },
+    {
+      "kind": "settled",
+      "class": "hero__eyebrow",
+      "time": 3568.8999999910593
+    },
+    {
+      "kind": "animationstart",
+      "class": "hero__title",
+      "time": 3619.199999988079
+    },
+    {
+      "kind": "animationend",
+      "class": "hero__title",
+      "time": 4119.0999999940395
+    },
+    {
+      "kind": "settled",
+      "class": "hero__title",
+      "time": 4119.199999988079
+    },
+    {
+      "kind": "animationstart",
+      "class": "hero__role",
+      "time": 4152.79999999702
+    },
+    {
+      "kind": "animationend",
+      "class": "hero__role",
+      "time": 4519.699999988079
+    },
+    {
+      "kind": "settled",
+      "class": "hero__role",
+      "time": 4519.899999991059
+    },
+    {
+      "kind": "animationstart",
+      "class": "hero__intro",
+      "time": 4552.0999999940395
+    },
+    {
+      "kind": "animationend",
+      "class": "hero__intro",
+      "time": 4952.399999991059
+    },
+    {
+      "kind": "settled",
+      "class": "hero__intro",
+      "time": 4952.5
+    },
+    {
+      "kind": "animationstart",
+      "class": "button button--ink",
+      "time": 5002.79999999702
+    },
+    {
+      "kind": "animationstart",
+      "class": "button button--outline",
+      "time": 5169
+    },
+    {
+      "kind": "animationend",
+      "class": "button button--ink",
+      "time": 5302.699999988079
+    },
+    {
+      "kind": "settled",
+      "class": "button button--ink",
+      "time": 5302.79999999702
+    },
+    {
+      "kind": "animationstart",
+      "class": "hero__cv",
+      "time": 5352.899999991059
+    },
+    {
+      "kind": "animationstart",
+      "class": "hero__socials",
+      "time": 5435.5
+    },
+    {
+      "kind": "animationstart",
+      "class": "hero__scroll",
+      "time": 5435.5
+    },
+    {
+      "kind": "animationstart",
+      "class": "hero__number",
+      "time": 5435.5
+    },
+    {
+      "kind": "animationend",
+      "class": "button button--outline",
+      "time": 5469.399999991059
+    },
+    {
+      "kind": "settled",
+      "class": "button button--outline",
+      "time": 5469.5
+    },
+    {
+      "kind": "animationend",
+      "class": "hero__cv",
+      "time": 5652.5999999940395
+    },
+    {
+      "kind": "settled",
+      "class": "hero__cv",
+      "time": 5652.699999988079
+    },
+    {
+      "kind": "animationend",
+      "class": "hero__socials",
+      "time": 5736.0999999940395
+    },
+    {
+      "kind": "settled",
+      "class": "hero__socials",
+      "time": 5736.199999988079
+    },
+    {
+      "kind": "animationend",
+      "class": "hero__scroll",
+      "time": 5736.29999999702
+    },
+    {
+      "kind": "settled",
+      "class": "hero__scroll",
+      "time": 5736.29999999702
+    },
+    {
+      "kind": "animationend",
+      "class": "hero__number",
+      "time": 5736.29999999702
+    },
+    {
+      "kind": "settled",
+      "class": "hero__number",
+      "time": 5736.29999999702
+    },
+    {
+      "kind": "animationstart",
+      "class": "hero__portrait-scene",
+      "time": 5803
+    },
+    {
+      "kind": "animationend",
+      "class": "hero__portrait-scene",
+      "time": 6452.899999991059
+    },
+    {
+      "kind": "settled",
+      "class": "hero__portrait-scene",
+      "time": 6452.899999991059
+    },
+    {
+      "kind": "settled",
+      "class": "hero__signature",
+      "time": 8739.199999988079
+    }
+  ],
+  "guards": [
+    {
+      "src": "/images/logos/logo-ak.png",
+      "draggable": false,
+      "contextPrevented": true,
+      "dragPrevented": true
+    },
+    {
+      "src": "/images/logos/logo-ak-Dark.png",
+      "draggable": false,
+      "contextPrevented": true,
+      "dragPrevented": true
+    },
+    {
+      "src": "/images/ahmed-khaled-cutout-v2.png",
+      "draggable": false,
+      "contextPrevented": true,
+      "dragPrevented": true
+    },
+    {
+      "src": "/images/projects/project-brghr.png",
+      "draggable": false,
+      "contextPrevented": true,
+      "dragPrevented": true
+    },
+    {
+      "src": "/images/projects/project-aou-planner.png",
+      "draggable": false,
+      "contextPrevented": true,
+      "dragPrevented": true
+    },
+    {
+      "src": "/images/projects/project-scented-realms.png",
+      "draggable": false,
+      "contextPrevented": true,
+      "dragPrevented": true
+    },
+    {
+      "src": "/certificates/certificate-1.jpg",
+      "draggable": false,
+      "contextPrevented": true,
+      "dragPrevented": true
+    },
+    {
+      "src": "/certificates/certificate-2.png",
+      "draggable": false,
+      "contextPrevented": true,
+      "dragPrevented": true
+    },
+    {
+      "src": "/certificates/certificate-3.png",
+      "draggable": false,
+      "contextPrevented": true,
+      "dragPrevented": true
+    },
+    {
+      "src": "/certificates/certificate-4.jpg",
+      "draggable": false,
+      "contextPrevented": true,
+      "dragPrevented": true
+    },
+    {
+      "src": "/certificates/certificate-5.png",
+      "draggable": false,
+      "contextPrevented": true,
+      "dragPrevented": true
+    },
+    {
+      "src": "/certificates/certificate-6.jpg",
+      "draggable": false,
+      "contextPrevented": true,
+      "dragPrevented": true
+    },
+    {
+      "src": "/certificates/certificate-7.jpg",
+      "draggable": false,
+      "contextPrevented": true,
+      "dragPrevented": true
+    },
+    {
+      "src": "/certificates/certificate-8.png",
+      "draggable": false,
+      "contextPrevented": true,
+      "dragPrevented": true
+    },
+    {
+      "src": "/certificates/certificate-9.jpg",
+      "draggable": false,
+      "contextPrevented": true,
+      "dragPrevented": true
+    }
+  ]
+}

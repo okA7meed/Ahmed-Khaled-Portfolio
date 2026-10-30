@@ -38,7 +38,7 @@ export function LoadingScreen() {
       setDone(true);
       return;
     }
-document.body.style.overflow = "hidden";
+    document.body.style.overflow = "hidden";
     let raf = 0;
     const start = performance.now();
     const tick = (t: number) => {
@@ -67,7 +67,7 @@ document.body.style.overflow = "hidden";
         y: done ? "-100%" : 0,
         pointerEvents: done ? "none" : "auto",
       }}
-transition={{ duration: ANIMATIONS.loadingDuration, ease: ANIMATIONS.loadingEase }}
+      transition={{ duration: ANIMATIONS.loadingDuration, ease: ANIMATIONS.loadingEase }}
       className="fixed inset-0 z-[100] flex flex-col items-center justify-center bg-background px-6"
     >
       <motion.h1

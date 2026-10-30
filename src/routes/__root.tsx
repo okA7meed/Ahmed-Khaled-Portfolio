@@ -3,106 +3,93 @@ import {
   Outlet,
   Link,
   createRootRouteWithContext,
-  useRouter,
   HeadContent,
   Scripts,
+  useRouter,
 } from "@tanstack/react-router";
 import { useEffect, type ReactNode } from "react";
-
 import appCss from "../styles.css?url";
 import { reportLovableError } from "../lib/lovable-error-reporting";
-import { ThemeProvider, initThemeScript } from "@/hooks/use-theme";
 import { siteConfig } from "@/config";
+import { ThemeProvider } from "@/hooks/use-theme";
+import { initThemeScript } from "@/lib/theme";
 
 function NotFoundComponent() {
   return (
-    <div className="flex min-h-screen items-center justify-center bg-background px-4">
-      <div className="max-w-md text-center">
-        <h1 className="text-7xl font-bold text-foreground">404</h1>
-        <h2 className="mt-4 text-xl font-semibold text-foreground">Page not found</h2>
-        <p className="mt-2 text-sm text-muted-foreground">
-          The page you're looking for doesn't exist or has been moved.
-        </p>
-        <div className="mt-6">
-          <Link
-            to="/"
-            className="inline-flex items-center justify-center rounded-md bg-primary px-4 py-2 text-sm font-medium text-primary-foreground transition-colors hover:bg-primary/90"
-          >
-            Go home
-          </Link>
-        </div>
-      </div>
-    </div>
+    <main className="error-page" dir="rtl" lang="ar">
+      <p className="error-page__eyebrow">404</p>
+      <h1>الصفحة غير موجودة</h1>
+      <p>الرابط الذي فتحته غير متاح أو تم نقله.</p>
+      <Link to="/">العودة إلى الصفحة الرئيسية</Link>
+    </main>
   );
 }
 
 function ErrorComponent({ error, reset }: { error: Error; reset: () => void }) {
-  console.error(error);
   const router = useRouter();
   useEffect(() => {
     reportLovableError(error, { boundary: "tanstack_root_error_component" });
   }, [error]);
-
   return (
-    <div className="flex min-h-screen items-center justify-center bg-background px-4">
-      <div className="max-w-md text-center">
-        <h1 className="text-xl font-semibold tracking-tight text-foreground">
-          This page didn't load
-        </h1>
-        <p className="mt-2 text-sm text-muted-foreground">
-          Something went wrong on our end. You can try refreshing or head back home.
-        </p>
-        <div className="mt-6 flex flex-wrap justify-center gap-2">
-          <button
-            onClick={() => {
-              router.invalidate();
-              reset();
-            }}
-            className="inline-flex items-center justify-center rounded-md bg-primary px-4 py-2 text-sm font-medium text-primary-foreground transition-colors hover:bg-primary/90"
-          >
-            Try again
-          </button>
-          <a
-            href="/"
-            className="inline-flex items-center justify-center rounded-md border border-input bg-background px-4 py-2 text-sm font-medium text-foreground transition-colors hover:bg-accent"
-          >
-            Go home
-          </a>
-        </div>
+    <main className="error-page" dir="rtl" lang="ar">
+      <p className="error-page__eyebrow">تعذر التحميل</p>
+      <h1>حدث خطأ في الصفحة</h1>
+      <p>يمكنك تحديث الصفحة أو العودة إلى الصفحة الرئيسية.</p>
+      <div className="error-page__actions">
+        <button
+          type="button"
+          onClick={() => {
+            router.invalidate();
+            reset();
+          }}
+        >
+          حاول مرة أخرى
+        </button>
+        <Link to="/">الصفحة الرئيسية</Link>
       </div>
-    </div>
+    </main>
   );
 }
 
 export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()({
   head: () => ({
     meta: [
-{ charSet: "utf-8" },
+      { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
       { title: `${siteConfig.name} — ${siteConfig.role}` },
-      { name: "description", content: "AI Engineer and Full Stack Developer in Cairo, Egypt. Computer Science at Arab Open University — AI products, full stack apps, UI/UX and digital marketing." },
+      {
+        name: "description",
+        content: "Ahmed Khaled Hussain — AI Engineer and Full Stack Developer in Cairo, Egypt.",
+      },
       { name: "author", content: siteConfig.name },
       { property: "og:title", content: `${siteConfig.name} — ${siteConfig.role}` },
-      { property: "og:description", content: "AI Engineer and Full Stack Developer in Cairo, Egypt. Computer Science at Arab Open University — AI products, full stack apps, UI/UX and digital marketing." },
+      {
+        property: "og:description",
+        content: "AI Engineer and Full Stack Developer in Cairo, Egypt.",
+      },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
-      { name: "twitter:site", content: "@Lovable" },
     ],
     links: [
+      { rel: "stylesheet", href: appCss },
       {
-        rel: "stylesheet",
-        href: appCss,
+        rel: "preload",
+        href: "/fonts/thmanyah/thmanyah-400.woff2",
+        as: "font",
+        type: "font/woff2",
+        crossOrigin: "anonymous",
       },
-      { rel: "preconnect", href: "https://fonts.googleapis.com" },
-      { rel: "preconnect", href: "https://fonts.gstatic.com", crossOrigin: "anonymous" },
       {
-        rel: "stylesheet",
-        href: "https://fonts.googleapis.com/css2?family=Syne:wght@400..800&family=Space+Grotesk:wght@300..700&family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&display=swap",
+        rel: "preload",
+        href: "/fonts/thmanyah/thmanyah-700.woff2",
+        as: "font",
+        type: "font/woff2",
+        crossOrigin: "anonymous",
       },
       { rel: "icon", type: "image/png", href: "/favicon.png" },
       { rel: "icon", type: "image/png", sizes: "16x16", href: "/favicon-16x16.png" },
       { rel: "icon", type: "image/png", sizes: "32x32", href: "/favicon-32x32.png" },
-      { rel: "apple-touch-icon", sizes: "180x180", href: "/apple-touch-icon.png" },
+      { rel: "apple-touch-icon", type: "image/png", href: "/apple-touch-icon.png" },
     ],
   }),
   shellComponent: RootShell,
@@ -113,10 +100,16 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
 
 function RootShell({ children }: { children: ReactNode }) {
   return (
-    <html lang="en">
+    <html lang="ar" dir="rtl" data-theme="dark" className="dark" suppressHydrationWarning>
       <head>
-        <HeadContent />
         <script dangerouslySetInnerHTML={{ __html: initThemeScript() }} />
+        <script
+          dangerouslySetInnerHTML={{
+            __html:
+              '(()=>{const h=document.documentElement;h.dataset.entranceBoot="pending";setTimeout(()=>{if(h.dataset.entranceBoot==="pending")h.dataset.entranceBoot="expired"},2000)})()',
+          }}
+        />
+        <HeadContent />
       </head>
       <body>
         {children}
@@ -128,13 +121,11 @@ function RootShell({ children }: { children: ReactNode }) {
 
 function RootComponent() {
   const { queryClient } = Route.useRouteContext();
-
   return (
-    <QueryClientProvider client={queryClient}>
-      <ThemeProvider>
-        {/* Required: nested routes render here. Removing <Outlet /> breaks all child routes. */}
+    <ThemeProvider>
+      <QueryClientProvider client={queryClient}>
         <Outlet />
-      </ThemeProvider>
-    </QueryClientProvider>
+      </QueryClientProvider>
+    </ThemeProvider>
   );
 }

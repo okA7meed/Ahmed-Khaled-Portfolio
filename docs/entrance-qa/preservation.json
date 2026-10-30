@@ -1,0 +1,24 @@
+{
+  "protectedFilesVerified": 23,
+  "allPublicAssetsUnchanged": true,
+  "allSiteDataAndTranslationsUnchanged": true,
+  "folderGeometryCssUnchanged": true,
+  "changedSourceFiles": [
+    "src/styles.css",
+    "src/components/hero.tsx",
+    "src/components/nav.tsx",
+    "src/routes/index.tsx",
+    "src/routes/__root.tsx",
+    "src/components/sections/awards.tsx",
+    "src/components/sections/portfolio-folders.tsx",
+    "src/components/sections/section-ui.tsx",
+    "src/components/sections/services.tsx",
+    "src/components/sections/stack.tsx",
+    "src/components/sections/about.tsx"
+  ],
+  "newSourceFiles": [
+    "src/entrance.css",
+    "src/lib/entrance.ts"
+  ],
+  "removedFiles": []
+}

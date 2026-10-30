@@ -1,0 +1,21 @@
+/** One clock for the navbar and hero. Navbar enters about 20% faster. */
+export const OPENING = {
+  frame: 0,
+  brand: 0.56,
+  links: 0.84,
+  linkStep: 0.06,
+  theme: 1.58,
+  language: 1.68,
+  menu: 1.68,
+  project: 1.96,
+  availability: 2.33,
+  title: 2.77,
+  role: 3.31,
+  description: 3.71,
+  primary: 4.15,
+  secondary: 4.33,
+  cv: 4.51,
+  socials: 4.59,
+  portrait: 4.95,
+  signature: 5.67,
+} as const;

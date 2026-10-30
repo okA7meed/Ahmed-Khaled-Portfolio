@@ -1,13 +1,7 @@
-/**
- * ── THEME ──────────────────────────────────────────────────────
- * Two complete themes (DARK + LIGHT). Each theme maps a semantic
- * CSS-variable name → a value. The active theme's variables are
- * injected onto <html> by the ThemeProvider, and every utility/
- * component reads them via var(--…).
- *
- * Adding a new theme (Blue, Purple, Red, Custom…) is purely a
- * config change: add an entry here and in site.config.ts
- * (availableThemes). No component code needs to change.
+/** Theme names, persistence key and legacy optional-component palette.
+ * The active portfolio's semantic tokens and material treatments are in
+ * src/themes.css, selected by data-theme. The provider deliberately does not
+ * inject this legacy palette over those CSS tokens.
  */
 import { COLORS } from "./colors";
 
